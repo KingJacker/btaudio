@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TPA6132A2RTET
+D 25-mW DirectPath Stereo Headphone Amplifier with Pop Suppression (TPA6132)
+K
+F http://www.ti.com/lit/gpn/TPA6132A2
+$ENDCMP
+#
+#End Doc Library

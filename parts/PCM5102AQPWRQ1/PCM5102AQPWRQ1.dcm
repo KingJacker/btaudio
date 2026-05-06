@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PCM5102AQPWRQ1
+D Automotive Catalog 2VRMS DirectPath, 112dB Audio Stereo DAC with 32-bit, 384kHz PCM Interface
+K
+F http://www.ti.com/lit/gpn/pcm5102a-q1
+$ENDCMP
+#
+#End Doc Library
