@@ -15,7 +15,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
-				(at 0 -46.99 0)
+				(at 3.81 24.384 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -25,7 +25,7 @@
 				)
 			)
 			(property "Value" "EWM104-BT5125"
-				(at 0 -49.53 0)
+				(at 3.81 21.844 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -35,7 +35,7 @@
 				)
 			)
 			(property "Footprint" "EWM104-BT5125:EWM104-BT5125"
-				(at 0 0 0)
+				(at 34.036 40.64 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -46,7 +46,7 @@
 				)
 			)
 			(property "Datasheet" "https://www.cdebyte.com/products/EWM104-BT5125(I2S)/2"
-				(at 0 0 0)
+				(at 46.736 34.544 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -57,7 +57,7 @@
 				)
 			)
 			(property "Description" "QCC5125 BLE5.1 Bluetooth Audio Module (DAC/I2S/SPDIF), 54-pad castellated"
-				(at 0 0 0)
+				(at 56.388 37.592 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -69,8 +69,8 @@
 			)
 			(symbol "EWM104-BT5125_0_1"
 				(rectangle
-					(start -15.24 -44.45)
-					(end 15.24 44.45)
+					(start -15.24 44.45)
+					(end 15.24 -55.88)
 					(stroke
 						(width 0)
 						(type default)
@@ -335,7 +335,7 @@
 					)
 				)
 				(pin power_in line
-					(at -12.7 46.99 90)
+					(at -12.7 -58.42 90)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -443,7 +443,7 @@
 					)
 				)
 				(pin power_in line
-					(at -7.62 46.99 90)
+					(at -7.62 -58.42 90)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -750,7 +750,7 @@
 					)
 				)
 				(pin power_in line
-					(at -2.54 46.99 90)
+					(at -2.54 -58.42 90)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -858,7 +858,7 @@
 					)
 				)
 				(pin power_in line
-					(at 2.54 46.99 90)
+					(at 2.54 -58.42 90)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -876,7 +876,7 @@
 					)
 				)
 				(pin power_in line
-					(at 7.62 46.99 90)
+					(at 7.62 -58.42 90)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -912,7 +912,7 @@
 					)
 				)
 				(pin power_in line
-					(at 12.7 46.99 90)
+					(at 12.7 -58.42 90)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -1061,7 +1061,7 @@
 	)
 	(symbol
 		(lib_id "EWM104-BT5125:EWM104-BT5125")
-		(at 128.27 99.06 0)
+		(at 127 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1070,9 +1070,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "1c08b968-a3e1-4ac6-8c11-577dfd1dbe79")
+		(uuid "f99dbe3f-4730-4c81-887d-174a6eb1938d")
 		(property "Reference" "U1"
-			(at 128.27 44.45 0)
+			(at 127 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1082,7 +1082,7 @@
 			)
 		)
 		(property "Value" "EWM104-BT5125"
-			(at 128.27 46.99 0)
+			(at 127 29.21 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1092,7 +1092,7 @@
 			)
 		)
 		(property "Footprint" "EWM104-BT5125:EWM104-BT5125"
-			(at 128.27 99.06 0)
+			(at 127 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1103,7 +1103,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.cdebyte.com/products/EWM104-BT5125(I2S)/2"
-			(at 128.27 99.06 0)
+			(at 127 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1114,7 +1114,7 @@
 			)
 		)
 		(property "Description" "QCC5125 BLE5.1 Bluetooth Audio Module (DAC/I2S/SPDIF), 54-pad castellated"
-			(at 128.27 99.06 0)
+			(at 127 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1124,167 +1124,167 @@
 				)
 			)
 		)
-		(pin "19"
-			(uuid "253e98c0-11ae-4d27-abfb-4e740c5fcfc2")
-		)
-		(pin "21"
-			(uuid "8ea8fe97-3e9c-420d-a7ba-676942626519")
-		)
-		(pin "1"
-			(uuid "f4fa02e9-59a3-4c32-8168-c10902daa6c6")
-		)
-		(pin "12"
-			(uuid "383be40b-68e3-4726-b859-1dfad76894b0")
-		)
-		(pin "15"
-			(uuid "4271d0e5-d688-419a-a352-178cc13a24ce")
-		)
-		(pin "26"
-			(uuid "63326070-0f54-445e-9998-43c7a5f2cb47")
-		)
-		(pin "29"
-			(uuid "e1b8e755-4f53-4b99-aa50-ad44aa27ecd2")
-		)
-		(pin "31"
-			(uuid "54293cbb-7d1d-42ec-aacb-e72360ab7904")
-		)
-		(pin "28"
-			(uuid "e58acb03-5688-433c-bda1-562a968fea3e")
-		)
-		(pin "13"
-			(uuid "54797d39-c9e7-4d0c-a382-e24e7c45370b")
-		)
-		(pin "7"
-			(uuid "7f97d368-5dc9-4b7b-89ae-b6fc8524e2df")
-		)
-		(pin "2"
-			(uuid "9ecd6313-ac11-4952-84db-993fcc0552b0")
-		)
-		(pin "3"
-			(uuid "3e7fc192-9d67-4cfb-9d6d-252ac5737d29")
-		)
-		(pin "9"
-			(uuid "507e64d8-b5fa-4274-97cf-a2159bb39633")
-		)
-		(pin "5"
-			(uuid "071c8a3b-38d1-4a1f-88cd-0d4a60fa0ed8")
-		)
-		(pin "4"
-			(uuid "5a0638e7-b25f-4e17-8cce-efc39580500f")
-		)
-		(pin "6"
-			(uuid "95890463-793d-4cb6-b65d-e8aba0fb772e")
-		)
-		(pin "8"
-			(uuid "e638f29c-76b4-49e5-80be-7b1ed7f27dd3")
-		)
-		(pin "10"
-			(uuid "b6ebc854-2143-4acd-ade3-54a4f452d535")
-		)
-		(pin "11"
-			(uuid "fdf6748d-33f5-41a7-a4c7-b165bce75826")
-		)
-		(pin "14"
-			(uuid "a68fb624-8bee-4b31-95db-48dc5cc18f1e")
-		)
-		(pin "16"
-			(uuid "dba3eeb8-8889-41d9-abf4-b737bb3c63aa")
-		)
-		(pin "17"
-			(uuid "ed0464fa-bf96-46d9-acb5-ffd24a6b6917")
-		)
-		(pin "18"
-			(uuid "ba54e40a-cf53-4efa-92f4-6fe1fc965e43")
-		)
-		(pin "20"
-			(uuid "21b67468-48c9-4da6-b9a9-a209f9d81c03")
+		(pin "27"
+			(uuid "9632aab7-b0d7-423e-bf6d-9fcf9e752d77")
 		)
 		(pin "22"
-			(uuid "71f54495-0d20-4a3a-a632-5025d056650f")
+			(uuid "2ed03d71-7776-4b14-b076-ddaca804f1a2")
 		)
-		(pin "23"
-			(uuid "8f4c45ca-ad04-484d-8e04-d747bc024b76")
-		)
-		(pin "24"
-			(uuid "bc9acfbd-29a5-40d4-afa5-eb5f8880462b")
-		)
-		(pin "25"
-			(uuid "5903e208-2935-4290-871a-fd046f06ccdc")
-		)
-		(pin "27"
-			(uuid "679c059a-8589-454b-a3c3-bf288f5bb776")
-		)
-		(pin "30"
-			(uuid "073eb9e5-bea0-4d43-acbd-a230260eba3c")
-		)
-		(pin "34"
-			(uuid "1ab89c2b-96a9-4cac-aca5-b597a547396b")
-		)
-		(pin "45"
-			(uuid "8442a373-f13f-45c9-84d6-a7f9bc74b6d1")
-		)
-		(pin "52"
-			(uuid "b79ff90e-00c5-4a5e-a82d-be35c26846e0")
-		)
-		(pin "41"
-			(uuid "7fc79b6a-a255-4a23-a0e2-1c1d8931b52c")
-		)
-		(pin "51"
-			(uuid "fea02f62-152d-451c-a068-14e68ab7dc8f")
+		(pin "10"
+			(uuid "8eee0f18-cd1a-4dfa-8bbd-358812efb78b")
 		)
 		(pin "46"
-			(uuid "9110b0e7-513e-40c9-b43f-7f7b1dcb6de7")
+			(uuid "b7df1720-7bc7-4a05-9e47-5cc36924f3c1")
 		)
-		(pin "32"
-			(uuid "bfb91f00-6eaa-427d-aee9-4149d55bf458")
-		)
-		(pin "42"
-			(uuid "cf009e4f-d44c-437d-8da3-6bdd20226910")
-		)
-		(pin "50"
-			(uuid "be501d5c-8fd8-4474-a262-db3d5dd6b66e")
-		)
-		(pin "35"
-			(uuid "2dd0aeb9-db9c-430d-ace6-7e98137ff9db")
-		)
-		(pin "54"
-			(uuid "cb41d419-50c2-46f5-82a5-9a0159eba1ff")
-		)
-		(pin "38"
-			(uuid "477a5fe8-4c21-4d5d-b145-aa336d23bdf4")
-		)
-		(pin "43"
-			(uuid "7179f57b-7c8a-426b-a993-52b1a37d3c00")
-		)
-		(pin "44"
-			(uuid "880da33a-cd94-4720-bd63-fff0d0ff5cea")
-		)
-		(pin "48"
-			(uuid "ef3dd1b4-3350-48dd-bca5-97797d12499d")
-		)
-		(pin "49"
-			(uuid "6b688b33-3031-45ed-8c79-8d460f71dda3")
+		(pin "45"
+			(uuid "34213768-dd8c-430f-bde5-4966c885afaa")
 		)
 		(pin "39"
-			(uuid "8c96d8e8-9e95-4a9d-b2c2-fadf8041506d")
+			(uuid "33904beb-4674-4b42-99d3-049c9a96a9b5")
 		)
-		(pin "53"
-			(uuid "ec0db891-d362-439d-a98a-ded4317c847e")
+		(pin "5"
+			(uuid "98407e44-704a-4e04-ae28-33d66a2c3e14")
 		)
-		(pin "36"
-			(uuid "bcfe4c6e-fea6-4f1a-b954-a54063d15dd8")
+		(pin "43"
+			(uuid "d768f5af-164d-44b9-9d2b-332e76c5a2f0")
 		)
-		(pin "37"
-			(uuid "c2754ed3-9ce6-4868-8d39-5c7ef4a9bd51")
+		(pin "21"
+			(uuid "aa9e8457-7bf4-468d-88b2-66dc244554ac")
 		)
 		(pin "33"
-			(uuid "487ff60c-624a-4746-9188-312101402d15")
+			(uuid "37d361dd-ef99-4929-9fe5-2c77ce586a24")
 		)
-		(pin "40"
-			(uuid "8f2ae912-4afa-48c6-965d-a61bf9f5d230")
+		(pin "32"
+			(uuid "89e8bf66-d9a7-4cf1-97ff-bb06db770a03")
+		)
+		(pin "48"
+			(uuid "9bfa8d59-d84a-4759-8cb4-3f155acf8ad5")
+		)
+		(pin "3"
+			(uuid "2d37bebd-c886-4ac1-bd39-6779c291fa82")
+		)
+		(pin "25"
+			(uuid "4260d88d-621b-4e1a-ad22-8eda0f637356")
+		)
+		(pin "51"
+			(uuid "3107ec1a-da8b-4548-a539-2a65b6624bbc")
+		)
+		(pin "30"
+			(uuid "f4707172-14ca-4de3-9b3a-8bfc5f02bce4")
+		)
+		(pin "49"
+			(uuid "88033326-843c-49ea-9862-cc232eafd018")
+		)
+		(pin "34"
+			(uuid "06d9e9a8-993d-4b45-b852-29f547e3a6c4")
+		)
+		(pin "29"
+			(uuid "6f4fc112-ad1f-4cab-8c1c-0b2722bc605c")
+		)
+		(pin "18"
+			(uuid "a33248a1-1dbf-45a0-900b-bcf6476d7072")
+		)
+		(pin "44"
+			(uuid "76b1f1d1-bcc0-4d58-a5ed-fc656816cdb2")
+		)
+		(pin "11"
+			(uuid "fa10d934-378e-4356-ae4f-47d485d29028")
+		)
+		(pin "17"
+			(uuid "5ee863a0-1afe-4b01-b98f-0bc2f4857894")
+		)
+		(pin "23"
+			(uuid "92f244e3-7aae-4f12-8a36-01a2cb9bcc05")
+		)
+		(pin "13"
+			(uuid "f531516b-69d6-4681-9288-73365b25ffe9")
+		)
+		(pin "52"
+			(uuid "0873788e-1f47-41af-8968-d6762b600040")
+		)
+		(pin "16"
+			(uuid "f638ea9c-cc54-4674-8dde-1be7d479c157")
+		)
+		(pin "31"
+			(uuid "57b13972-7f5a-4f17-ae04-311465d4f5cc")
 		)
 		(pin "47"
-			(uuid "ce600958-a5d4-4421-a046-d5248450927b")
+			(uuid "92533220-75d9-4b31-8936-8935b383d3ad")
+		)
+		(pin "50"
+			(uuid "228822ee-966d-44ff-a815-170fc0d823a8")
+		)
+		(pin "12"
+			(uuid "2f795a96-9265-4a9e-bc2a-79ec3f09a376")
+		)
+		(pin "53"
+			(uuid "93a4a4cf-108c-4e3f-b8a1-96c8ee11727a")
+		)
+		(pin "54"
+			(uuid "7c24ad3f-76aa-4a36-a9f0-1f3d0e11c7e6")
+		)
+		(pin "19"
+			(uuid "5c6eda05-d28f-478e-bd06-fdd2024cf2c2")
+		)
+		(pin "7"
+			(uuid "195ced16-6ab9-4d98-96dc-99263f641b1c")
+		)
+		(pin "41"
+			(uuid "718b60e0-d324-44c7-9b71-b44cb043c89f")
+		)
+		(pin "8"
+			(uuid "69c2320d-de5a-4954-9962-3829c492842d")
+		)
+		(pin "20"
+			(uuid "c098357c-aa48-4dd1-9e1f-d7f52b960b16")
+		)
+		(pin "1"
+			(uuid "aadb6080-2b97-498d-bf79-b60d50f3a00b")
+		)
+		(pin "2"
+			(uuid "3a52c30a-c29e-4f99-bfa9-0591d2dbdba5")
+		)
+		(pin "9"
+			(uuid "31676f39-fff7-432e-9da1-e2dc6b308503")
+		)
+		(pin "36"
+			(uuid "c5272d38-442c-419a-ba54-4242c4fbbf09")
+		)
+		(pin "26"
+			(uuid "0430871a-83c9-4867-88aa-c42350117177")
+		)
+		(pin "37"
+			(uuid "827a5572-052f-4395-be38-9969b644d78b")
+		)
+		(pin "35"
+			(uuid "30807486-90a7-4452-8feb-8fec3f462deb")
+		)
+		(pin "15"
+			(uuid "ea94177d-767c-443c-8612-23a4df5425b1")
+		)
+		(pin "42"
+			(uuid "3730a763-8c96-4ad6-a212-60aed10bc11f")
+		)
+		(pin "40"
+			(uuid "26403cd1-d299-4c33-80be-a490216f50d4")
+		)
+		(pin "38"
+			(uuid "aaa3fb64-fea2-4d49-bd57-fe5f2868475b")
+		)
+		(pin "28"
+			(uuid "41c8248d-e64f-408f-8d94-800823c678a8")
+		)
+		(pin "4"
+			(uuid "9b1f45e1-e3b1-4893-8b5e-09f4c34e56d1")
+		)
+		(pin "24"
+			(uuid "0d6a390e-ba96-46f3-8b79-28144774861c")
+		)
+		(pin "14"
+			(uuid "362e549d-b74e-4b79-bd7a-ac7d3f9019f5")
+		)
+		(pin "6"
+			(uuid "5de13005-917a-457c-8711-4740e20bcb2e")
 		)
 		(instances
 			(project "btaudio"
