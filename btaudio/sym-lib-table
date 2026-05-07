@@ -1,6 +1,6 @@
 (sym_lib_table
 	(version 7)
-	(lib (name "TPA6132A2RTET") (type "KiCad") (uri "C:/Users/D/Documents/KiCad/projects/btaudio/parts/TPA6132A2RTET/TPA6132A2RTET.kicad_sym") (options "") (descr ""))
-	(lib (name "PCM5102AQPWRQ1") (type "KiCad") (uri "C:/Users/D/Documents/KiCad/projects/btaudio/parts/PCM5102AQPWRQ1/PCM5102AQPWRQ1.kicad_sym") (options "") (descr ""))
+	(lib (name "TPA6132A2RTET") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/TPA6132A2RTET/TPA6132A2RTET.kicad_sym") (options "") (descr ""))
+	(lib (name "PCM5102AQPWRQ1") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/PCM5102AQPWRQ1/PCM5102AQPWRQ1.kicad_sym") (options "") (descr ""))
 	(lib (name "EWM104-BT5125") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/EWM104-BT5125-PCB/EWM104-BT5125.kicad_sym") (options "") (descr ""))
 )
