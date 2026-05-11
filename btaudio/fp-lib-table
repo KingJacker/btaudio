@@ -4,4 +4,5 @@
 	(lib (name "EWM104-BT5125-PCB") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/EWM104-BT5125-PCB/EWM104-BT5125-PCB") (options "") (descr ""))
 	(lib (name "TPA6132A2RTET") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/TPA6132A2RTET") (options "") (descr ""))
 	(lib (name "PCM5102AQPWRQ1") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/PCM5102AQPWRQ1") (options "") (descr ""))
+	(lib (name "A-1JB") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/A-1JB") (options "") (descr ""))
 )

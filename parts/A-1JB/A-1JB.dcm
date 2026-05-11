@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP A-1JB
+D U.FL (UMCC), AMC Connector Jack, Male Pin 50 Ohms Surface Mount Solder
+K
+F https://s3-us-west-2.amazonaws.com/catsy.582/ca-1jb.pdf
+$ENDCMP
+#
+#End Doc Library
