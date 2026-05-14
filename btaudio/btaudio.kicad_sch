@@ -350,6 +350,231 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Conn_01x03_Socket"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x03_Socket"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x03, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x03_Socket_1_1"
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy -0.508 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 2.032)
+					(mid -0.5058 2.54)
+					(end 0 3.048)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
 			(pin_names
 				(offset 1.016)
@@ -1053,235 +1278,6 @@
 						)
 					)
 					(number "SH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Connector_Audio:AudioJack4"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 8.89 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "AudioJack4"
-				(at 0 6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Audio Jack, 4 Poles (TRRS)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "audio jack receptacle stereo headphones TRRS connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Jack*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "AudioJack4_0_1"
-				(rectangle
-					(start -6.35 -5.08)
-					(end -7.62 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.715 -5.08) (xy -5.08 -5.715) (xy -4.445 -5.08) (xy -4.445 2.54) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 -5.08) (xy -1.27 -5.715) (xy -0.635 -5.08) (xy -0.635 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -5.08) (xy 0.635 -5.715) (xy 1.27 -5.08) (xy 2.54 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 2.54 3.81)
-					(end -6.35 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy -2.54 0) (xy -2.54 -5.08) (xy -3.175 -5.715) (xy -3.81 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "AudioJack4_1_1"
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "R1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "R2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -5.08 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "T"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5908,7 +5904,7 @@
 	)
 	(rectangle
 		(start 168.91 22.86)
-		(end 304.8 116.84)
+		(end 369.57 116.84)
 		(stroke
 			(width 0)
 			(type default)
@@ -6011,17 +6007,6 @@
 		)
 		(uuid "2e29f5d1-1cc5-4a38-b3d8-2f67c7d66ddf")
 	)
-	(text "Physical PJ-320E 	Pin	KiCad	Function\n1					S			Sleeve (Mic)\n2					R2			Ring 2 (GND)\n3					R1			Ring 1 (Right)\n4					T			Tip (Left)\n5					SW			Switch/NC"
-		(exclude_from_sim no)
-		(at 302.768 56.642 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "621831ec-a8a3-4793-84a6-ac70ff39eb23")
-	)
 	(text "Disable Mute"
 		(exclude_from_sim no)
 		(at 259.842 150.368 0)
@@ -6075,6 +6060,16 @@
 			(justify left)
 		)
 		(uuid "80f8f737-e6b2-4f8f-8c7b-860eef35660a")
+	)
+	(text "jumper\n"
+		(exclude_from_sim no)
+		(at 46.482 82.296 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8291e618-9be5-4892-880f-1e01cec605d1")
 	)
 	(text "Internal 1.8V"
 		(exclude_from_sim no)
@@ -6184,28 +6179,22 @@
 		(uuid "e96dd23f-b217-47d2-ba7f-6c7ed50a88e8")
 	)
 	(junction
-		(at 25.4 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "06d3b84f-0504-4d70-9ab8-d0d602d20dda")
-	)
-	(junction
 		(at 50.8 182.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0f26aed6-d0e0-4b1e-954f-b6195fe3ca29")
 	)
 	(junction
-		(at 25.4 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2027659b-23e4-4041-a7b5-14c110664665")
-	)
-	(junction
 		(at 181.61 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "24fab62c-f994-4939-a796-6a649f0aebd9")
+	)
+	(junction
+		(at 25.4 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2504f186-4bd2-4234-98ee-270803d053f9")
 	)
 	(junction
 		(at 50.8 177.8)
@@ -6224,12 +6213,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "32c57971-20f4-430e-b4c7-495c974e36c4")
-	)
-	(junction
-		(at 25.4 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "33b67eb4-0e6f-4e3c-b442-254dbe97da4f")
 	)
 	(junction
 		(at 284.48 148.59)
@@ -6256,16 +6239,16 @@
 		(uuid "4fc0ffad-12b6-4aee-8354-3d258ada629c")
 	)
 	(junction
-		(at 25.4 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6d8cc7da-ec29-4e9d-9109-4c312ddfc174")
-	)
-	(junction
 		(at 191.77 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "73431873-c063-4e5a-9e8a-f35e53fbdc18")
+	)
+	(junction
+		(at 25.4 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "768b9a98-8bc0-4d93-91da-174e036db29e")
 	)
 	(junction
 		(at 138.43 73.66)
@@ -6368,6 +6351,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e388a7fb-6ed1-4764-99e9-999243c08068")
+	)
+	(junction
+		(at 25.4 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e584f835-300f-4866-8f94-75dd65a3c73a")
 	)
 	(junction
 		(at 113.03 163.83)
@@ -6482,10 +6471,6 @@
 		(uuid "c6eb9583-b3c6-4c28-9afd-8384a7ad0927")
 	)
 	(no_connect
-		(at 307.34 63.5)
-		(uuid "eb7d6c50-6a95-4a86-b9f5-b74e68122137")
-	)
-	(no_connect
 		(at 73.66 48.26)
 		(uuid "f2942a09-cd9d-4e2b-9c08-e587787ee8b6")
 	)
@@ -6565,13 +6550,13 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 63.5) (xy 53.34 63.5)
+			(xy 25.4 80.01) (xy 25.4 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "10a70603-51c0-437b-9b1d-c5bc62f40f6d")
+		(uuid "10fb21a5-8225-4d20-82ad-925338fef52c")
 	)
 	(wire
 		(pts
@@ -6585,7 +6570,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 67.31) (xy 25.4 67.31)
+			(xy 43.18 64.77) (xy 25.4 64.77)
 		)
 		(stroke
 			(width 0)
@@ -6715,17 +6700,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 63.5) (xy 25.4 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28541b0d-0cb1-4b66-b036-93f271ccb137")
-	)
-	(wire
-		(pts
-			(xy 25.4 67.31) (xy 25.4 71.12)
+			(xy 25.4 64.77) (xy 25.4 68.58)
 		)
 		(stroke
 			(width 0)
@@ -6752,16 +6727,6 @@
 			(type default)
 		)
 		(uuid "2aa671f2-b7c3-459d-af4d-8c6ee32cd665")
-	)
-	(wire
-		(pts
-			(xy 59.69 68.58) (xy 59.69 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c820e71-a36d-46f1-b652-d36aac3e8ac2")
 	)
 	(wire
 		(pts
@@ -6805,7 +6770,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 78.74) (xy 25.4 78.74)
+			(xy 43.18 80.01) (xy 25.4 80.01)
 		)
 		(stroke
 			(width 0)
@@ -6865,7 +6830,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 78.74) (xy 53.34 78.74)
+			(xy 64.77 80.01) (xy 53.34 80.01)
 		)
 		(stroke
 			(width 0)
@@ -6945,16 +6910,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 66.04) (xy 57.15 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4359d64e-6359-4777-9bf5-31c40d925938")
-	)
-	(wire
-		(pts
 			(xy 91.44 139.7) (xy 91.44 138.43)
 		)
 		(stroke
@@ -6965,7 +6920,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 74.93) (xy 53.34 74.93)
+			(xy 54.61 72.39) (xy 53.34 72.39)
 		)
 		(stroke
 			(width 0)
@@ -7125,7 +7080,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 71.12) (xy 62.23 74.93)
+			(xy 54.61 71.12) (xy 54.61 72.39)
 		)
 		(stroke
 			(width 0)
@@ -7175,6 +7130,16 @@
 	)
 	(wire
 		(pts
+			(xy 25.4 68.58) (xy 25.4 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b97ec8f-acb6-4d7d-a018-b77315acb4e1")
+	)
+	(wire
+		(pts
 			(xy 201.93 193.04) (xy 201.93 190.5)
 		)
 		(stroke
@@ -7182,16 +7147,6 @@
 			(type default)
 		)
 		(uuid "6b9c370e-df84-431a-9c3c-b6a6f27e8650")
-	)
-	(wire
-		(pts
-			(xy 25.4 71.12) (xy 25.4 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6cf8ddfe-cef8-4ce5-85f0-3041c04fdec9")
 	)
 	(wire
 		(pts
@@ -7255,13 +7210,23 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 71.12) (xy 53.34 71.12)
+			(xy 53.34 68.58) (xy 73.66 68.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "7751b4c0-6150-4962-980f-3ad1dcef6cec")
+	)
+	(wire
+		(pts
+			(xy 54.61 66.04) (xy 73.66 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78532a45-4882-4098-8c58-bfc829a8313b")
 	)
 	(wire
 		(pts
@@ -7272,16 +7237,6 @@
 			(type default)
 		)
 		(uuid "793c637e-71a0-42ef-afb4-159bfcad093b")
-	)
-	(wire
-		(pts
-			(xy 25.4 78.74) (xy 25.4 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7984e62a-6d68-4a2d-8465-711709c630e8")
 	)
 	(wire
 		(pts
@@ -7375,16 +7330,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 63.5) (xy 25.4 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8760f656-94cd-4a9f-94f3-4be04c35b332")
-	)
-	(wire
-		(pts
 			(xy 294.64 71.12) (xy 307.34 71.12)
 		)
 		(stroke
@@ -7472,16 +7417,6 @@
 			(type default)
 		)
 		(uuid "992a6864-7982-4a1e-ba42-be2bf6b75c78")
-	)
-	(wire
-		(pts
-			(xy 57.15 66.04) (xy 57.15 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9ab8a0ec-5dd2-4a50-9917-a25a3c2cf741")
 	)
 	(wire
 		(pts
@@ -7695,7 +7630,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 74.93) (xy 25.4 74.93)
+			(xy 43.18 72.39) (xy 25.4 72.39)
 		)
 		(stroke
 			(width 0)
@@ -7775,13 +7710,13 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 74.93) (xy 25.4 78.74)
+			(xy 25.4 72.39) (xy 25.4 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c97d5760-403a-4998-97d7-b76076995283")
+		(uuid "c808ccb0-8c67-4b61-8022-bfff2c93958b")
 	)
 	(wire
 		(pts
@@ -7835,7 +7770,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 67.31) (xy 53.34 67.31)
+			(xy 53.34 64.77) (xy 54.61 64.77)
 		)
 		(stroke
 			(width 0)
@@ -7875,7 +7810,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 71.12) (xy 62.23 71.12)
+			(xy 73.66 71.12) (xy 54.61 71.12)
 		)
 		(stroke
 			(width 0)
@@ -7892,6 +7827,16 @@
 			(type default)
 		)
 		(uuid "dcad52d3-af1f-489f-807d-29829db50fc4")
+	)
+	(wire
+		(pts
+			(xy 54.61 64.77) (xy 54.61 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfd21cd4-237e-4745-a50c-738f6f611dc4")
 	)
 	(wire
 		(pts
@@ -7945,16 +7890,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 68.58) (xy 59.69 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb789742-9da9-4a9e-9445-8ccebedf3be9")
-	)
-	(wire
-		(pts
 			(xy 72.39 185.42) (xy 74.93 185.42)
 		)
 		(stroke
@@ -7995,7 +7930,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 73.66) (xy 64.77 78.74)
+			(xy 64.77 73.66) (xy 64.77 80.01)
 		)
 		(stroke
 			(width 0)
@@ -8025,7 +7960,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 71.12) (xy 25.4 71.12)
+			(xy 43.18 68.58) (xy 25.4 68.58)
 		)
 		(stroke
 			(width 0)
@@ -11275,6 +11210,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x03_Socket")
+		(at 312.42 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "053cbfc6-2b0d-4850-add3-f25c2393997e")
+		(property "Reference" "J3"
+			(at 313.69 67.3099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Audio"
+			(at 313.69 69.8499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Crystal_Handsoldering_AKL:Resonator_SMD-3Pin_7.2x3.0mm_BigPads"
+			(at 312.42 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 312.42 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 312.42 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "6a81f509-70c5-400d-b025-6c11b1e21686")
+		)
+		(pin "1"
+			(uuid "98ac320b-e31c-4479-8777-bcac9ed8880e")
+		)
+		(pin "3"
+			(uuid "e188ae58-2b92-4c72-b420-a0db1625a8cf")
+		)
+		(instances
+			(project "btaudio"
+				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 25.4 82.55 0)
 		(unit 1)
@@ -11490,7 +11510,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 285.4452 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -11887,7 +11907,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 244.8052 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -12203,7 +12223,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 120.396 87.376 0)
 			(hide yes)
 			(show_name no)
@@ -12285,7 +12305,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 64.4652 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12367,7 +12387,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 184.4548 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -12525,7 +12545,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 182.5752 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -12684,7 +12704,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 42.8752 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -12849,7 +12869,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 54.61 170.688 90)
 			(hide yes)
 			(show_name no)
@@ -12931,7 +12951,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 305.7652 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -13319,7 +13339,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 297.18 192.278 90)
 			(hide yes)
 			(show_name no)
@@ -13557,7 +13577,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 152.0952 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -13637,7 +13657,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 130.81 91.948 90)
 			(hide yes)
 			(show_name no)
@@ -13951,7 +13971,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 256.2352 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -14339,7 +14359,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 48.26 71.12 0)
+		(at 48.26 68.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14349,7 +14369,7 @@
 		(dnp no)
 		(uuid "6b7bd875-d9ac-455b-87bc-79b3f4d31b20")
 		(property "Reference" "SW3"
-			(at 51.308 68.834 0)
+			(at 51.308 66.294 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14359,7 +14379,7 @@
 			)
 		)
 		(property "Value" "PAUSE/VOL-"
-			(at 41.148 68.834 0)
+			(at 41.148 66.294 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14369,7 +14389,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 66.04 0)
+			(at 48.26 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14380,7 +14400,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 66.04 0)
+			(at 48.26 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14391,7 +14411,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 71.12 0)
+			(at 48.26 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14837,7 +14857,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 309.5752 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -15282,7 +15302,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 113.9952 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -15332,7 +15352,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 48.26 74.93 0)
+		(at 48.26 72.39 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15342,7 +15362,7 @@
 		(dnp no)
 		(uuid "7d135209-907f-4b07-a1f9-120dd461a376")
 		(property "Reference" "SW2"
-			(at 51.308 72.644 0)
+			(at 51.308 70.104 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15352,7 +15372,7 @@
 			)
 		)
 		(property "Value" "PLAY/VOL+"
-			(at 42.164 72.644 0)
+			(at 42.164 70.104 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15362,7 +15382,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 69.85 0)
+			(at 48.26 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15373,7 +15393,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 69.85 0)
+			(at 48.26 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15384,7 +15404,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 74.93 0)
+			(at 48.26 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15443,7 +15463,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 190.5 71.4248 0)
 			(hide yes)
 			(show_name no)
@@ -15647,7 +15667,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 315.9252 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -15729,7 +15749,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 249.8852 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -15811,7 +15831,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 192.7352 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -16207,7 +16227,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 192.7352 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -16289,7 +16309,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 221.9452 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -16494,92 +16514,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Audio:AudioJack4")
-		(at 312.42 66.04 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9d4cb027-68d3-4dfc-b422-15887ac6c9bb")
-		(property "Reference" "J4"
-			(at 314.96 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AudioJack4"
-			(at 314.96 59.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_PJ320E_Horizontal"
-			(at 312.42 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 312.42 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Audio Jack, 4 Poles (TRRS)"
-			(at 312.42 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "S"
-			(uuid "6e5990ff-b0ef-4eb1-bd14-2acc67ad9116")
-		)
-		(pin "R2"
-			(uuid "f9e1e0ad-8b46-4232-b885-3ea615ec706b")
-		)
-		(pin "R1"
-			(uuid "007f5fd2-1f06-46ac-a7bd-11a6c08773ba")
-		)
-		(pin "T"
-			(uuid "55c32121-2252-4739-8e93-8c203e388659")
-		)
-		(instances
-			(project "btaudio"
-				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Polarized")
 		(at 294.64 153.67 0)
 		(unit 1)
@@ -16612,7 +16546,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 295.6052 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -16693,7 +16627,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 54.61 169.672 90)
 			(hide yes)
 			(show_name no)
@@ -16979,7 +16913,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 48.26 78.74 0)
+		(at 48.26 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16989,7 +16923,7 @@
 		(dnp no)
 		(uuid "ac7eaac0-37e6-454b-91d4-d7ca3ab97d71")
 		(property "Reference" "SW6"
-			(at 51.308 76.454 0)
+			(at 51.308 77.724 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16999,7 +16933,7 @@
 			)
 		)
 		(property "Value" "SOFT RESET"
-			(at 41.91 76.454 0)
+			(at 41.91 77.724 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17008,8 +16942,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 73.66 0)
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 48.26 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17020,7 +16954,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 73.66 0)
+			(at 48.26 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17031,7 +16965,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 78.74 0)
+			(at 48.26 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17128,85 +17062,6 @@
 			(project "btaudio"
 				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
 					(reference "#PWR048")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 48.26 63.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b2593ae5-fe02-4709-8036-1030dce0206b")
-		(property "Reference" "SW5"
-			(at 51.308 61.214 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "NEXT/BT DISCONNECT"
-			(at 37.338 61.214 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "92a63dc9-32b0-44d1-841d-baa150073f89")
-		)
-		(pin "2"
-			(uuid "9424d001-05b9-4c26-a438-06bc5bd7d34d")
-		)
-		(instances
-			(project "btaudio"
-				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
-					(reference "SW5")
 					(unit 1)
 				)
 			)
@@ -17379,7 +17234,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 48.26 67.31 0)
+		(at 48.26 64.77 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17389,7 +17244,7 @@
 		(dnp no)
 		(uuid "bd697be1-3f58-40ed-b2ea-8b80e8b2ebab")
 		(property "Reference" "SW4"
-			(at 51.308 65.024 0)
+			(at 51.308 62.484 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17399,7 +17254,7 @@
 			)
 		)
 		(property "Value" "PREV/BT PAIRING"
-			(at 39.37 65.024 0)
+			(at 39.37 62.484 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17409,7 +17264,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 62.23 0)
+			(at 48.26 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17420,7 +17275,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 62.23 0)
+			(at 48.26 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17431,7 +17286,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 67.31 0)
+			(at 48.26 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17567,7 +17422,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 202.8952 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -17649,7 +17504,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 33.9852 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -17731,7 +17586,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 190.5 79.0448 0)
 			(hide yes)
 			(show_name no)
@@ -17890,7 +17745,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 309.5752 198.12 0)
 			(hide yes)
 			(show_name no)
@@ -17970,7 +17825,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 297.18 175.768 90)
 			(hide yes)
 			(show_name no)
@@ -18280,7 +18135,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 120.396 92.456 0)
 			(hide yes)
 			(show_name no)
@@ -18516,7 +18371,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 231.902 60.96 90)
 			(hide yes)
 			(show_name no)
@@ -18806,7 +18661,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 182.5752 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -19199,7 +19054,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 130.81 97.028 90)
 			(hide yes)
 			(show_name no)
