@@ -5,4 +5,6 @@
 	(lib (name "TPA6132A2RTET") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/TPA6132A2RTET") (options "") (descr ""))
 	(lib (name "PCM5102AQPWRQ1") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/PCM5102AQPWRQ1") (options "") (descr ""))
 	(lib (name "A-1JB") (type "KiCad") (uri "/home/dan/Documents/kicad/btaudio/parts/A-1JB") (options "") (descr ""))
+	(lib (name "Battery-Connectors") (type "KiCad") (uri "${KIPRJMOD}/Battery-Connectors.pretty") (options "") (descr ""))
+	(lib (name "Aux-Pads") (type "KiCad") (uri "${KIPRJMOD}/Aux-Pads.pretty") (options "") (descr ""))
 )

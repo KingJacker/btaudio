@@ -575,6 +575,273 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Conn_01x04_Socket"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x04_Socket"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x04, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x04_Socket_1_1"
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy -0.508 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -0.508 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 2.032)
+					(mid -0.5058 2.54)
+					(end 0 3.048)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -5.588)
+					(mid -0.5058 -5.08)
+					(end 0 -4.572)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
 			(pin_names
 				(offset 1.016)
@@ -6191,12 +6458,6 @@
 		(uuid "24fab62c-f994-4939-a796-6a649f0aebd9")
 	)
 	(junction
-		(at 25.4 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2504f186-4bd2-4234-98ee-270803d053f9")
-	)
-	(junction
 		(at 50.8 177.8)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6243,12 +6504,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "73431873-c063-4e5a-9e8a-f35e53fbdc18")
-	)
-	(junction
-		(at 25.4 72.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "768b9a98-8bc0-4d93-91da-174e036db29e")
 	)
 	(junction
 		(at 138.43 73.66)
@@ -6353,12 +6608,6 @@
 		(uuid "e388a7fb-6ed1-4764-99e9-999243c08068")
 	)
 	(junction
-		(at 25.4 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e584f835-300f-4866-8f94-75dd65a3c73a")
-	)
-	(junction
 		(at 113.03 163.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6389,6 +6638,10 @@
 	(no_connect
 		(at 73.66 43.18)
 		(uuid "4b3555e7-d837-4a07-913b-b516b0fa4b4e")
+	)
+	(no_connect
+		(at 73.66 63.5)
+		(uuid "4ca3428d-8247-43aa-8569-157af3cf8e14")
 	)
 	(no_connect
 		(at 73.66 86.36)
@@ -6570,16 +6823,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 64.77) (xy 25.4 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13513a92-fa46-485b-a9b2-806f522e5a29")
-	)
-	(wire
-		(pts
 			(xy 88.9 138.43) (xy 88.9 137.16)
 		)
 		(stroke
@@ -6697,16 +6940,6 @@
 			(type default)
 		)
 		(uuid "274b674b-2adc-4efd-af55-a6bc95725606")
-	)
-	(wire
-		(pts
-			(xy 25.4 64.77) (xy 25.4 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a516058-1146-4e82-86cd-841764cf9ae5")
 	)
 	(wire
 		(pts
@@ -6920,7 +7153,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 72.39) (xy 53.34 72.39)
+			(xy 53.34 71.12) (xy 73.66 71.12)
 		)
 		(stroke
 			(width 0)
@@ -7080,16 +7313,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 71.12) (xy 54.61 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68813501-9f6f-448e-8a78-0a9b4db27c1d")
-	)
-	(wire
-		(pts
 			(xy 63.5 50.8) (xy 73.66 50.8)
 		)
 		(stroke
@@ -7127,16 +7350,6 @@
 			(type default)
 		)
 		(uuid "6b6a0186-a359-49c6-b8b7-a73d6d1dc4f7")
-	)
-	(wire
-		(pts
-			(xy 25.4 68.58) (xy 25.4 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b97ec8f-acb6-4d7d-a018-b77315acb4e1")
 	)
 	(wire
 		(pts
@@ -7217,16 +7430,6 @@
 			(type default)
 		)
 		(uuid "7751b4c0-6150-4962-980f-3ad1dcef6cec")
-	)
-	(wire
-		(pts
-			(xy 54.61 66.04) (xy 73.66 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "78532a45-4882-4098-8c58-bfc829a8313b")
 	)
 	(wire
 		(pts
@@ -7630,16 +7833,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 72.39) (xy 25.4 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bbd38fb0-ed84-4eb1-8851-2d0c452ce19c")
-	)
-	(wire
-		(pts
 			(xy 88.9 138.43) (xy 91.44 138.43)
 		)
 		(stroke
@@ -7710,16 +7903,6 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 72.39) (xy 25.4 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c808ccb0-8c67-4b61-8022-bfff2c93958b")
-	)
-	(wire
-		(pts
 			(xy 60.96 171.45) (xy 58.42 171.45)
 		)
 		(stroke
@@ -7770,7 +7953,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 64.77) (xy 54.61 64.77)
+			(xy 53.34 66.04) (xy 73.66 66.04)
 		)
 		(stroke
 			(width 0)
@@ -7810,16 +7993,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 71.12) (xy 54.61 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dbc91a92-d922-4e9a-aee2-5c73f332c4d6")
-	)
-	(wire
-		(pts
 			(xy 191.77 143.51) (xy 215.9 143.51)
 		)
 		(stroke
@@ -7827,16 +8000,6 @@
 			(type default)
 		)
 		(uuid "dcad52d3-af1f-489f-807d-29829db50fc4")
-	)
-	(wire
-		(pts
-			(xy 54.61 64.77) (xy 54.61 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dfd21cd4-237e-4745-a50c-738f6f611dc4")
 	)
 	(wire
 		(pts
@@ -7890,7 +8053,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 185.42) (xy 74.93 185.42)
+			(xy 72.39 185.42) (xy 80.01 185.42)
 		)
 		(stroke
 			(width 0)
@@ -7950,23 +8113,13 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 182.88) (xy 74.93 182.88)
+			(xy 71.12 182.88) (xy 80.01 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f3e90ca7-2676-4da2-a5cf-43914fe93979")
-	)
-	(wire
-		(pts
-			(xy 43.18 68.58) (xy 25.4 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f444d0c2-a34e-4dfe-830a-80241d0978ca")
 	)
 	(wire
 		(pts
@@ -11243,7 +11396,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "PCM_Crystal_Handsoldering_AKL:Resonator_SMD-3Pin_7.2x3.0mm_BigPads"
+		(property "Footprint" "Aux-Pads:aux-pads"
 			(at 312.42 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -11289,83 +11442,6 @@
 			(project "btaudio"
 				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
 					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 25.4 82.55 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "08bbf452-7b04-4c91-b8d2-8220e1faeb7c")
-		(property "Reference" "#PWR042"
-			(at 25.4 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 25.4 86.614 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 25.4 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 25.4 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 25.4 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "12bea813-e460-47ab-9f56-f9fcef9cb89f")
-		)
-		(instances
-			(project "btaudio"
-				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
-					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -11956,88 +12032,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x02_Socket")
-		(at 80.01 185.42 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1907888a-769b-4e87-929b-a0aeb83579d6")
-		(property "Reference" "J1"
-			(at 81.28 185.4201 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BAT_CON"
-			(at 81.28 182.8801 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal"
-			(at 80.01 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 80.01 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "714a7c1f-7237-4664-90fd-598771c69dbe")
-		)
-		(pin "2"
-			(uuid "4b8ee9aa-46fb-4327-9423-330589369710")
-		)
-		(instances
-			(project "btaudio"
-				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 304.8 151.13 0)
 		(mirror y)
@@ -12187,6 +12181,83 @@
 			(project "btaudio"
 				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
 					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 25.4 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1ccce6ac-3c3f-4d4b-93c9-507f3775ba4c")
+		(property "Reference" "#PWR043"
+			(at 25.4 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 25.654 86.614 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 25.4 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 25.4 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c16def4b-02cd-4d80-b892-4c437abfdc60")
+		)
+		(instances
+			(project "btaudio"
+				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -14358,85 +14429,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 48.26 68.58 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6b7bd875-d9ac-455b-87bc-79b3f4d31b20")
-		(property "Reference" "SW3"
-			(at 51.308 66.294 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PAUSE/VOL-"
-			(at 41.148 66.294 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ca532c9f-795d-4ecb-9dc9-983a66936711")
-		)
-		(pin "2"
-			(uuid "bca2157b-5bc2-429a-9ee4-702959ead9fc")
-		)
-		(instances
-			(project "btaudio"
-				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
-					(reference "SW3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 215.9 163.83 270)
 		(unit 1)
@@ -15351,85 +15343,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 48.26 72.39 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7d135209-907f-4b07-a1f9-120dd461a376")
-		(property "Reference" "SW2"
-			(at 51.308 70.104 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PLAY/VOL+"
-			(at 42.164 70.104 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "74c637fd-fd3d-41e5-a4fe-51199b020ee3")
-		)
-		(pin "2"
-			(uuid "dadbde23-9a12-4d7f-adb5-205f3529fa95")
-		)
-		(instances
-			(project "btaudio"
-				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
-					(reference "SW2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "C_1")
 		(lib_id "Device:C")
 		(at 186.69 72.39 90)
@@ -15798,6 +15711,92 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x04_Socket")
+		(at 48.26 71.12 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "828473f2-d481-488d-b101-3dba02dfd3a2")
+		(property "Reference" "J1"
+			(at 48.895 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTNS"
+			(at 48.895 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
+			(at 48.26 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated"
+			(at 48.26 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "873c7d05-d600-4415-ad2d-8d955e14d1a9")
+		)
+		(pin "1"
+			(uuid "b69ab395-a3b4-43b5-8903-d9d06284fad5")
+		)
+		(pin "3"
+			(uuid "3f742faf-217f-4277-8561-08a098fb70cc")
+		)
+		(pin "4"
+			(uuid "583de553-d600-4bfa-9ff0-90d28174970f")
+		)
+		(instances
+			(project "btaudio"
+				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "C_1")
 		(lib_id "Device:C")
 		(at 191.77 147.32 0)
@@ -15957,6 +15956,83 @@
 			(project "btaudio"
 				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
 					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 53.34 73.66 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "868c2413-2ce7-4dcb-a2a7-6927f1acf982")
+		(property "Reference" "#PWR042"
+			(at 59.69 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 53.34 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e8b72417-b3d2-4d00-ae7d-9a5bd4a0a105")
+		)
+		(instances
+			(project "btaudio"
+				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -17068,6 +17144,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 85.09 182.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b27d4769-dc8b-4a7e-99d5-29bb59d087bd")
+		(property "Reference" "J6"
+			(at 86.36 182.8799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Battery"
+			(at 86.36 185.4199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 85.09 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 85.09 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d2692bd5-968a-4900-958e-63c6a3612027")
+		)
+		(pin "2"
+			(uuid "e649ce32-91b3-436c-b91d-7dfc048ac26b")
+		)
+		(instances
+			(project "btaudio"
+				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 35.56 201.93 0)
 		(unit 1)
@@ -17227,85 +17385,6 @@
 			(project "btaudio"
 				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
 					(reference "C18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 48.26 64.77 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bd697be1-3f58-40ed-b2ea-8b80e8b2ebab")
-		(property "Reference" "SW4"
-			(at 51.308 62.484 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PREV/BT PAIRING"
-			(at 39.37 62.484 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 48.26 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f141ab5d-0d49-4065-8cdb-2faa45cec8af")
-		)
-		(pin "2"
-			(uuid "3e23321c-6810-4db2-9db9-668da4cb8961")
-		)
-		(instances
-			(project "btaudio"
-				(path "/21b3f25d-2d8c-443d-b43c-14d976a4a395"
-					(reference "SW4")
 					(unit 1)
 				)
 			)

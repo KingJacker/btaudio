@@ -1,4 +1,4 @@
-(footprint "EWM104-BT5125(KiCAD)"
+(footprint "EWM104-BT5125(KiCAD)_flipped"
 	(version 20260206)
 	(generator "pcbnew")
 	(generator_version "10.0")
@@ -8,7 +8,7 @@
 		(unlocked yes)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "93442c5e-1f10-4feb-ac82-773877e0b42f")
+		(uuid "d02c4019-01b0-4581-ade1-f1d3da3d0313")
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -21,7 +21,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "06aa9b57-a6aa-45c5-adb0-36aa164072e4")
+		(uuid "a905dd3e-08db-472a-978b-97ab0404fe04")
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -34,7 +34,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "78d96835-6337-4993-9171-7227aa572f7d")
+		(uuid "0f1e7708-222b-4ed7-9163-0baebc437daf")
 		(effects
 			(font
 				(size 1 1)
@@ -47,7 +47,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "0c9d53a3-95ed-4cc6-8788-2a331a3e0143")
+		(uuid "33b92acf-7d98-4813-9c5d-b2540b872f84")
 		(effects
 			(font
 				(size 1 1)
@@ -197,10 +197,10 @@
 		)
 	)
 	(pad "1" thru_hole rect
-		(at -6.5 -8)
+		(at 6.5 -8)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -208,19 +208,19 @@
 		(uuid "1047cf4b-76ae-442a-b33f-0a198dfa8856")
 	)
 	(pad "1" smd rect
-		(at -6.5 -8)
+		(at 6.5 -8)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "e60b693d-11b5-43e3-b02d-8c0ead3d3f5e")
 	)
 	(pad "2" thru_hole rect
-		(at -6.5 -7)
+		(at 6.5 -7)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -228,19 +228,19 @@
 		(uuid "73b0c0d6-d0a3-4024-a243-347a345016d0")
 	)
 	(pad "2" smd rect
-		(at -6.5 -7)
+		(at 6.5 -7)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "10fbd144-0640-4655-8a1d-699dbd46891f")
 	)
 	(pad "3" thru_hole rect
-		(at -6.5 -6)
+		(at 6.5 -6)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -248,19 +248,19 @@
 		(uuid "01e8110f-808e-4d0b-a053-8afc562a0a10")
 	)
 	(pad "3" smd rect
-		(at -6.5 -6)
+		(at 6.5 -6)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "3d477458-032d-4585-82c3-d37809da24d7")
 	)
 	(pad "4" thru_hole rect
-		(at -6.5 -5)
+		(at 6.5 -5)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -268,19 +268,19 @@
 		(uuid "f0fd77e1-88c3-47bc-b5f0-6a7d2ceb4828")
 	)
 	(pad "4" smd rect
-		(at -6.5 -5)
+		(at 6.5 -5)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "1beb25b8-2c5d-4169-aead-75308f240902")
 	)
 	(pad "5" thru_hole rect
-		(at -6.5 -4)
+		(at 6.5 -4)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -288,19 +288,19 @@
 		(uuid "752d6bbf-1a4f-4b59-82f5-f4b5cd849a86")
 	)
 	(pad "5" smd rect
-		(at -6.5 -4)
+		(at 6.5 -4)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "1404fc9c-5af9-450a-a935-f1caea53c17a")
 	)
 	(pad "6" thru_hole rect
-		(at -6.5 -3)
+		(at 6.5 -3)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -308,19 +308,19 @@
 		(uuid "a42cd5cf-f50a-4e9c-8e9e-b2130997e93d")
 	)
 	(pad "6" smd rect
-		(at -6.5 -3)
+		(at 6.5 -3)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "e33c49a3-6b24-4b2f-baf1-947c6628a72e")
 	)
 	(pad "7" thru_hole rect
-		(at -6.5 -2)
+		(at 6.5 -2)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -328,19 +328,19 @@
 		(uuid "c9a3989c-1b59-4cee-9770-1854b5cb9f53")
 	)
 	(pad "7" smd rect
-		(at -6.5 -2)
+		(at 6.5 -2)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "cf05d5eb-4e2f-42d4-9ee6-62ada750e1cc")
 	)
 	(pad "8" thru_hole rect
-		(at -6.5 -1)
+		(at 6.5 -1)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -348,19 +348,19 @@
 		(uuid "53911afe-2827-41d1-88e6-2e42733504d1")
 	)
 	(pad "8" smd rect
-		(at -6.5 -1)
+		(at 6.5 -1)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "a5b640ce-1067-4be9-8fc7-40d36bf0af01")
 	)
 	(pad "9" thru_hole rect
-		(at -6.5 0)
+		(at 6.5 0)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -368,19 +368,19 @@
 		(uuid "6945a0cc-c6c5-42d9-aa07-ed813027aa72")
 	)
 	(pad "9" smd rect
-		(at -6.5 0)
+		(at 6.5 0)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "358671a0-5a82-4df7-8dd4-d146da51594b")
 	)
 	(pad "10" thru_hole rect
-		(at -6.5 1)
+		(at 6.5 1)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -388,19 +388,19 @@
 		(uuid "a9dc00ea-7991-47ef-97f5-8074b7134384")
 	)
 	(pad "10" smd rect
-		(at -6.5 1)
+		(at 6.5 1)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "4c9817c0-91af-4e07-a613-d2400ccad4b5")
 	)
 	(pad "11" thru_hole rect
-		(at -6.5 2)
+		(at 6.5 2)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -408,19 +408,19 @@
 		(uuid "195b4b01-8c0a-454e-8dad-629ebcd26657")
 	)
 	(pad "11" smd rect
-		(at -6.5 2)
+		(at 6.5 2)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "2b1385c6-9d28-4cc9-bd23-594c8de130d9")
 	)
 	(pad "12" thru_hole rect
-		(at -6.5 3)
+		(at 6.5 3)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -428,19 +428,19 @@
 		(uuid "00ac60c5-c30a-4ac6-a001-e9933a0cd423")
 	)
 	(pad "12" smd rect
-		(at -6.5 3)
+		(at 6.5 3)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "d08e8ea7-87ea-4076-8a1c-792909d02e99")
 	)
 	(pad "13" thru_hole rect
-		(at -6.5 4)
+		(at 6.5 4)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -448,19 +448,19 @@
 		(uuid "688a8c29-3dae-468c-93c5-acdd8791ee15")
 	)
 	(pad "13" smd rect
-		(at -6.5 4)
+		(at 6.5 4)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "69a47f75-c841-406c-bf08-0b77e8500dc7")
 	)
 	(pad "14" thru_hole rect
-		(at -6.5 5)
+		(at 6.5 5)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -468,19 +468,19 @@
 		(uuid "3bb2ac4f-09e8-490d-8911-81854cffbfe7")
 	)
 	(pad "14" smd rect
-		(at -6.5 5)
+		(at 6.5 5)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "ea91e535-98b5-40b1-bda7-00510012889b")
 	)
 	(pad "15" thru_hole rect
-		(at -6.5 6)
+		(at 6.5 6)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -488,19 +488,19 @@
 		(uuid "bc7ca883-2881-41d8-a78e-ac2e73613951")
 	)
 	(pad "15" smd rect
-		(at -6.5 6)
+		(at 6.5 6)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "13ad4a33-288b-4c31-8ecb-02ad44e07a46")
 	)
 	(pad "16" thru_hole rect
-		(at -6.5 7)
+		(at 6.5 7)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -508,19 +508,19 @@
 		(uuid "353905b3-11ec-46a6-a28e-866502a5b4bc")
 	)
 	(pad "16" smd rect
-		(at -6.5 7)
+		(at 6.5 7)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "c7a737b2-7687-4207-b35c-bd526a0dc89e")
 	)
 	(pad "17" thru_hole rect
-		(at -6.5 8)
+		(at 6.5 8)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -528,19 +528,19 @@
 		(uuid "490bc7f6-2f4d-4996-b2ab-4d3acca22856")
 	)
 	(pad "17" smd rect
-		(at -6.5 8)
+		(at 6.5 8)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "f17f4048-9743-44db-977c-3d53c46fb6c1")
 	)
 	(pad "18" thru_hole rect
-		(at -4.5 9 90)
+		(at 4.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -548,19 +548,19 @@
 		(uuid "2610fa37-1d90-4054-ae3b-c1ab6670f99c")
 	)
 	(pad "18" smd rect
-		(at -4.5 9 90)
+		(at 4.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "c3ad7b56-b1b6-431c-820b-9edee63df266")
 	)
 	(pad "19" thru_hole rect
-		(at -3.5 9 90)
+		(at 3.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -568,19 +568,19 @@
 		(uuid "bd4c952c-556c-4cd1-80a8-fa852a8fe448")
 	)
 	(pad "19" smd rect
-		(at -3.5 9 90)
+		(at 3.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "84111297-0c61-4b94-abf5-ef82617c2661")
 	)
 	(pad "20" thru_hole rect
-		(at -2.5 9 90)
+		(at 2.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -588,19 +588,19 @@
 		(uuid "39b51859-dfbe-4b53-a9be-855616e6ed02")
 	)
 	(pad "20" smd rect
-		(at -2.5 9 90)
+		(at 2.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "6f228ee3-a2a2-4745-b511-84bcfa2df3dc")
 	)
 	(pad "21" thru_hole rect
-		(at -1.5 9 90)
+		(at 1.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -608,19 +608,19 @@
 		(uuid "ac2f37f6-bf25-4251-9334-0d9f1f0de894")
 	)
 	(pad "21" smd rect
-		(at -1.5 9 90)
+		(at 1.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "0038bcfb-404c-4c17-87ad-5ea6ba7f5324")
 	)
 	(pad "22" thru_hole rect
-		(at -0.5 9 90)
+		(at 0.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -628,19 +628,19 @@
 		(uuid "04a2c0f7-5cbe-4bcf-b5f9-466f32e3aa48")
 	)
 	(pad "22" smd rect
-		(at -0.5 9 90)
+		(at 0.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "c1eaf50f-4e70-4dc1-8845-9cbc9f26ff55")
 	)
 	(pad "23" thru_hole rect
-		(at 0.5 9 90)
+		(at -0.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -648,19 +648,19 @@
 		(uuid "c49bc31e-19c9-4511-879b-b3f324f5aae5")
 	)
 	(pad "23" smd rect
-		(at 0.5 9 90)
+		(at -0.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "b3ffd71f-0940-4995-b260-713c8e76cee5")
 	)
 	(pad "24" thru_hole rect
-		(at 1.5 9 90)
+		(at -1.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -668,19 +668,19 @@
 		(uuid "c64537a0-d198-41c7-9e10-e8b6decefdf2")
 	)
 	(pad "24" smd rect
-		(at 1.5 9 90)
+		(at -1.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "f92e0d2f-421d-46b7-939f-49d401735d01")
 	)
 	(pad "25" thru_hole rect
-		(at 2.5 9 90)
+		(at -2.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -688,19 +688,19 @@
 		(uuid "5a2954ef-38da-4ab4-a50b-fa187144d844")
 	)
 	(pad "25" smd rect
-		(at 2.5 9 90)
+		(at -2.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "fda70d0d-ec55-4ab0-9e3e-aa4e0cae9534")
 	)
 	(pad "26" thru_hole rect
-		(at 3.5 9 90)
+		(at -3.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -708,19 +708,19 @@
 		(uuid "15b09524-c2d6-4be3-a9b7-f5f3b566d97e")
 	)
 	(pad "26" smd rect
-		(at 3.5 9 90)
+		(at -3.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "18527aea-5536-469b-8056-6bb1d313e353")
 	)
 	(pad "27" thru_hole rect
-		(at 4.5 9 90)
+		(at -4.5 9 270)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -728,19 +728,19 @@
 		(uuid "5fca577d-617b-4d72-b7cf-6b12f24d132f")
 	)
 	(pad "27" smd rect
-		(at 4.5 9 90)
+		(at -4.5 9 270)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "2672de14-12b5-4aba-a653-bacbed14ba08")
 	)
 	(pad "28" thru_hole rect
-		(at 6.5 8 180)
+		(at -6.5 8 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -748,19 +748,19 @@
 		(uuid "eba81f0b-245c-4809-b7a4-4fdeb8163c89")
 	)
 	(pad "28" smd rect
-		(at 6.5 8 180)
+		(at -6.5 8 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "69a888e0-3aad-4c74-aae8-63ed27ff9dfc")
 	)
 	(pad "29" thru_hole rect
-		(at 6.5 7 180)
+		(at -6.5 7 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -768,19 +768,19 @@
 		(uuid "a159be19-789e-439f-89aa-f36b21e3fdae")
 	)
 	(pad "29" smd rect
-		(at 6.5 7 180)
+		(at -6.5 7 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "4fc84875-f539-4cbe-b852-c54f1ba7c881")
 	)
 	(pad "30" thru_hole rect
-		(at 6.5 6 180)
+		(at -6.5 6 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -788,19 +788,19 @@
 		(uuid "0ffb6502-304f-49fd-ac20-9450639b22be")
 	)
 	(pad "30" smd rect
-		(at 6.5 6 180)
+		(at -6.5 6 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "4019a5f3-933d-43b7-89a7-d0f87cd852ba")
 	)
 	(pad "31" thru_hole rect
-		(at 6.5 5 180)
+		(at -6.5 5 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -808,19 +808,19 @@
 		(uuid "9e64084d-e5d4-4d11-a3bd-ae782fec31c5")
 	)
 	(pad "31" smd rect
-		(at 6.5 5 180)
+		(at -6.5 5 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "fc2f5e0d-56b9-4e77-aeb1-40a1fbcfb040")
 	)
 	(pad "32" thru_hole rect
-		(at 6.5 4 180)
+		(at -6.5 4 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -828,19 +828,19 @@
 		(uuid "80ec2322-281d-4b85-a771-1f8e9acf50d1")
 	)
 	(pad "32" smd rect
-		(at 6.5 4 180)
+		(at -6.5 4 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "decf350d-b3d2-464e-a9d0-e50c47fd49f7")
 	)
 	(pad "33" thru_hole rect
-		(at 6.5 3 180)
+		(at -6.5 3 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -848,19 +848,19 @@
 		(uuid "e68d3594-ce1b-4d0c-b50e-40bb22675be8")
 	)
 	(pad "33" smd rect
-		(at 6.5 3 180)
+		(at -6.5 3 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "3562a2ea-3697-4a9e-8cfa-e2820c53e501")
 	)
 	(pad "34" thru_hole rect
-		(at 6.5 2 180)
+		(at -6.5 2 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -868,19 +868,19 @@
 		(uuid "49faf3d0-1f95-4a4a-be87-7e0e01aa7a38")
 	)
 	(pad "34" smd rect
-		(at 6.5 2 180)
+		(at -6.5 2 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "1ab3dc61-7661-4dca-af79-7e0e128ea206")
 	)
 	(pad "35" thru_hole rect
-		(at 6.5 1 180)
+		(at -6.5 1 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -888,19 +888,19 @@
 		(uuid "68f62326-c20f-4336-a948-664f5e3ed616")
 	)
 	(pad "35" smd rect
-		(at 6.5 1 180)
+		(at -6.5 1 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "6b14be4c-2664-4a92-bb10-a7262b81beed")
 	)
 	(pad "36" thru_hole rect
-		(at 6.5 0 180)
+		(at -6.5 0 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -908,19 +908,19 @@
 		(uuid "b32c4cf7-d23a-4008-8fb1-77d178179f58")
 	)
 	(pad "36" smd rect
-		(at 6.5 0 180)
+		(at -6.5 0 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "5d53ce92-2a5c-4798-b205-3b972a893322")
 	)
 	(pad "37" thru_hole rect
-		(at 6.5 -1 180)
+		(at -6.5 -1 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -928,19 +928,19 @@
 		(uuid "11c4dd32-8fce-4025-aab6-9716f5e2cf86")
 	)
 	(pad "37" smd rect
-		(at 6.5 -1 180)
+		(at -6.5 -1 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "5d49b2e4-6e70-4158-af0a-8bb4a01f9d46")
 	)
 	(pad "38" thru_hole rect
-		(at 6.5 -2 180)
+		(at -6.5 -2 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -948,19 +948,19 @@
 		(uuid "0b3bbf61-b7f3-4881-b6b2-f561e9c76362")
 	)
 	(pad "38" smd rect
-		(at 6.5 -2 180)
+		(at -6.5 -2 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "50c27ef9-8909-42fa-b89e-55f621e5bc02")
 	)
 	(pad "39" thru_hole rect
-		(at 6.5 -3 180)
+		(at -6.5 -3 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -968,19 +968,19 @@
 		(uuid "149ea44d-6892-4a86-be69-6e531fac2491")
 	)
 	(pad "39" smd rect
-		(at 6.5 -3 180)
+		(at -6.5 -3 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "c12f993b-6511-4e09-8a99-c3eb2019e651")
 	)
 	(pad "40" thru_hole rect
-		(at 6.5 -4 180)
+		(at -6.5 -4 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -988,19 +988,19 @@
 		(uuid "9bbf02d1-f319-49e6-8e58-64e6d78a2be9")
 	)
 	(pad "40" smd rect
-		(at 6.5 -4 180)
+		(at -6.5 -4 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "187efcfe-56b8-45c0-aa6c-8ec5c441c6c0")
 	)
 	(pad "41" thru_hole rect
-		(at 6.5 -5 180)
+		(at -6.5 -5 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1008,19 +1008,19 @@
 		(uuid "e20f7c7b-ae7b-42f0-9e17-2d0eeaf5c1ac")
 	)
 	(pad "41" smd rect
-		(at 6.5 -5 180)
+		(at -6.5 -5 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "9b4f49ce-087a-4062-84f0-f947b49fae9d")
 	)
 	(pad "42" thru_hole rect
-		(at 6.5 -6 180)
+		(at -6.5 -6 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1028,19 +1028,19 @@
 		(uuid "7b352048-496a-4804-9f78-fdf5bba215c2")
 	)
 	(pad "42" smd rect
-		(at 6.5 -6 180)
+		(at -6.5 -6 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "39eb4fcd-d5b8-4e16-b6b2-5fa9e341e4b2")
 	)
 	(pad "43" thru_hole rect
-		(at 6.5 -7 180)
+		(at -6.5 -7 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1048,19 +1048,19 @@
 		(uuid "21deebc3-3600-43f5-93c4-f20fb39edeb1")
 	)
 	(pad "43" smd rect
-		(at 6.5 -7 180)
+		(at -6.5 -7 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "3eafaf9d-8e42-4c0e-8360-fcf6de2e2a14")
 	)
 	(pad "44" thru_hole rect
-		(at 6.5 -8 180)
+		(at -6.5 -8 180)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1068,19 +1068,19 @@
 		(uuid "c52061d9-bfd4-4848-926d-4c080c8d7e5c")
 	)
 	(pad "44" smd rect
-		(at 6.5 -8 180)
+		(at -6.5 -8 180)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "41275eb8-90a1-4745-a68b-b81e800b1fca")
 	)
 	(pad "45" thru_hole rect
-		(at 4.5 -9 270)
+		(at -4.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1088,19 +1088,19 @@
 		(uuid "8cb0f649-5296-400b-ae61-6ebcb3209c6e")
 	)
 	(pad "45" smd rect
-		(at 4.5 -9 270)
+		(at -4.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "68ee6744-bc71-495f-9cbf-c26cf2141af7")
 	)
 	(pad "46" thru_hole rect
-		(at 3.5 -9 270)
+		(at -3.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1108,19 +1108,19 @@
 		(uuid "e424e160-c355-40cc-a0fc-2be5a18516d4")
 	)
 	(pad "46" smd rect
-		(at 3.5 -9 270)
+		(at -3.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "a6180e34-f2fd-481b-b77a-0f765596cf1e")
 	)
 	(pad "47" thru_hole rect
-		(at 2.5 -9 270)
+		(at -2.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1128,19 +1128,19 @@
 		(uuid "291bd161-9d1b-478d-9d1b-a60913bc0d34")
 	)
 	(pad "47" smd rect
-		(at 2.5 -9 270)
+		(at -2.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "d1358045-aa97-4fba-8d1a-51980984e9cf")
 	)
 	(pad "48" thru_hole rect
-		(at 1.5 -9 270)
+		(at -1.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1148,19 +1148,19 @@
 		(uuid "1ffb03d7-43a4-4dcf-aaee-68cf2423e28a")
 	)
 	(pad "48" smd rect
-		(at 1.5 -9 270)
+		(at -1.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "b0e14612-de82-4ac0-af50-5bed84beb5b2")
 	)
 	(pad "49" thru_hole rect
-		(at 0.5 -9 270)
+		(at -0.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1168,19 +1168,19 @@
 		(uuid "cf60f247-ad9f-4003-b528-ce99d30a8ef6")
 	)
 	(pad "49" smd rect
-		(at 0.5 -9 270)
+		(at -0.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "92c01a97-76fe-49a1-be38-bc12797fc1d5")
 	)
 	(pad "50" thru_hole rect
-		(at -0.5 -9 270)
+		(at 0.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1188,19 +1188,19 @@
 		(uuid "abe6190a-d32b-4972-893d-1c50116863b6")
 	)
 	(pad "50" smd rect
-		(at -0.5 -9 270)
+		(at 0.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "aa04306b-2504-462b-90cc-df753a051f13")
 	)
 	(pad "51" thru_hole rect
-		(at -1.5 -9 270)
+		(at 1.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1208,19 +1208,19 @@
 		(uuid "77d220c3-a923-459b-937c-ebc407d4605b")
 	)
 	(pad "51" smd rect
-		(at -1.5 -9 270)
+		(at 1.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "093fe597-d382-4dfc-94a6-67ba66d8c42f")
 	)
 	(pad "52" thru_hole rect
-		(at -2.5 -9 270)
+		(at 2.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1228,19 +1228,19 @@
 		(uuid "d87ca852-7ea1-4846-81a2-1696e601443b")
 	)
 	(pad "52" smd rect
-		(at -2.5 -9 270)
+		(at 2.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "c01ce57a-6772-4564-8ff1-0f8118aaf466")
 	)
 	(pad "53" thru_hole rect
-		(at -3.5 -9 270)
+		(at 3.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1248,19 +1248,19 @@
 		(uuid "2ead2ecb-7b5a-4217-a98e-ae39bc38e94a")
 	)
 	(pad "53" smd rect
-		(at -3.5 -9 270)
+		(at 3.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "c5cded5d-9b1e-4292-bc36-1822aadeaf3d")
 	)
 	(pad "54" thru_hole rect
-		(at -4.5 -9 270)
+		(at 4.5 -9 90)
 		(size 0.4 0.7)
 		(drill 0.5
-			(offset 0.2 0)
+			(offset -0.2 0)
 		)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
@@ -1268,13 +1268,24 @@
 		(uuid "101b503f-e652-4f7c-a613-b22f8a1f24d0")
 	)
 	(pad "54" smd rect
-		(at -4.5 -9 270)
+		(at 4.5 -9 90)
 		(size 0.8 0.7)
 		(drill
-			(offset 0.4 0)
+			(offset -0.4 0)
 		)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "2a47c331-5759-4931-a093-d24069c7b3ab")
 	)
 	(embedded_fonts no)
+	(model "/home/dan/Documents/kicad/btaudio/parts/EWM104-BT5125-PCB/EWM104-BT5125-3D/EWM104-BT5125-3D/EWM104-BT5125.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
