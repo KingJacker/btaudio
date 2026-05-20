@@ -19,6 +19,10 @@ QCC5125 (BT 5.1)  →[I2S]→  PCM5102A (DAC)  →[Analog]→  TPA6132A2 (Amp)  
 
 ![Schaltplan](imgs/schematic.png)
 
+## Platine (3D-Ansicht)
+
+![PCB 3D-Render](imgs/btaudio.png)
+
 ## Ziel
 
 Alte, hochwertige Kabelkopfhörer auf modernes audiophiles Bluetooth-Niveau heben — durch konsequente Trennung von Funk, DA-Wandlung und Verstärkung.
