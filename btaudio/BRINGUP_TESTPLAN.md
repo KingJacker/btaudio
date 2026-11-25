@@ -238,3 +238,11 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 (4) dump #3 flash with programmer → golden image to restore #1/#2.
 - Phase 3 complete: 1V8 = 1.8 V · SW1 no effect · PSU current ~5 mA for 1 s then ~0 (module runs from VCHG) · not visible over BT
 - **Phase 3 verdict: firmware does not run in any power mode → module #2 recoverable only via direct flash programming.**
+
+### Module #2 opened — 2026-11-25
+
+- Shield removed. Parts: QCC5125 (FE437JL2), 32 MHz crystal, **flash = Macronix MX25U3232F** (32 Mbit, **1.8 V**, WSON-8)
+- Programmer must be **1.8 V** (CH341A + 1.8 V level-shifter adapter, or equivalent). 3.3 V will damage the chip.
+- WSON-8 pinout: 1 CS# · 2 SO/IO1 · 3 WP#/IO2 · 4 GND · 5 SI/IO0 · 6 SCLK · 7 HOLD#/IO3 · 8 VCC — tie WP#/HOLD# to VCC.
+- Plan: desolder flash from #2 → read twice with flashrom → compare sha256 → check `hexdump`/`strings`
+  (all FF = erased; readable strings = unencrypted, cloning viable; random = likely encrypted).
