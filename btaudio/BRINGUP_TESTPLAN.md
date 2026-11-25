@@ -236,3 +236,5 @@ Carrier board OK. PMU wakes on VCHG (1V8 present) but application firmware never
 Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programmer, check `strings` for encryption;
 (2) fit #3 per Phase 5, power from VBAT + SW1 only, no PC; (3) Phase 4 audio tests on #3;
 (4) dump #3 flash with programmer → golden image to restore #1/#2.
+- Phase 3 complete: 1V8 = 1.8 V · SW1 no effect · PSU current ~5 mA for 1 s then ~0 (module runs from VCHG) · not visible over BT
+- **Phase 3 verdict: firmware does not run in any power mode → module #2 recoverable only via direct flash programming.**
