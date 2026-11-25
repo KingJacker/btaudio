@@ -298,3 +298,43 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
   - No signal → not simply wrong firmware → Pico clock-injection test, flash dump.
 - Before reordering: prefer EWT104-DA10 dev board + (I2S) module from official Ebyte store as known-good reference.
 - Order 1.8 V SPI flash adapter (needed for backup/forensics either way).
+
+---
+
+## HANDOFF SUMMARY (read this first when resuming)
+
+**Hardware status**
+- Carrier board verified OK: rails, SYS_CTRL (SW1 → VBAT), RST, no bridges/shorts.
+- Board needs a battery/VBAT supply: U5 LDO is fed from VBAT, so USB-only → 3V3 = 0 V (I/O, DAC, amp unpowered).
+- Module #1, #2: bricked during attempts to connect Qualcomm tools via Windows VM USB passthrough (tools never connected,
+  nothing configured). PMU wakes on VCHG (1V8 present) but firmware never runs, no USB enumeration. #2 removed, shield off.
+- Module #3: fitted, boots on VBAT + SW1, pairs, LED follows play/pause. **No I2S output**: pads 3/4/5/6 idle (~50 mV),
+  pad 4 floats to 3 V with 100 k pull-up (not driven). DAC idle (VNEG 0 V), AMP_EN 0 V, no audio.
+- Module flash: Macronix **MX25U3232F, 32 Mbit, 1.8 V**, small leadless package (WSON/USON — measure size before buying socket).
+
+**Leading theory**
+- Ebyte dev board (EWT104-DA10) uses the same PCM5102A (slave-only) and the (I2S) module works there out of the box
+  → factory I2S firmware should be I2S master. Module #3 not driving I2S → probably **(DAC) firmware despite (I2S) label**.
+  Ebyte insists it is (I2S).
+
+**Next steps (in order)**
+1. **Decisive test:** 1 kHz tone, full volume, AC V across module pins 37–36 (L) and 35–34 (R).
+   Signal → wrong firmware → send evidence (photo of meter + label) to Ebyte, ask for replacement / I2S firmware image.
+   No signal → Pico clock-injection test (LRCK 48 kHz, BCK 3.072 MHz into pads 4/5; watch pad 3 DATA).
+2. **Buy programmer:** CH341A kit **with the 1.8 V adapter** (check the selected variant actually includes it).
+   SOIC clip will NOT fit the leadless flash → desolder chip onto a breakout or use a matching WSON/USON pogo socket.
+   Use `flashrom -p ch341a_spi`; read ≥2×, compare sha256. Practise on #2 first, then back up #3.
+3. Analyse dumps: all FF = erased; readable `strings` = unencrypted (cloning viable); random = likely encrypted.
+4. If reordering: prefer EWT104-DA10 dev board + (I2S) module from official Ebyte store as known-good reference.
+5. **Never** connect Qualcomm tools to #3 before a verified flash backup; then native Windows only, VBAT supplied, no VM.
+
+**Doc errors to fix later**
+- PLAN.md TPA6132A2 gain table is wrong: real gains are –6/0/3/6 dB (G1G0 = 00/01/10/11). Board has both gain pins → GND (–6 dB).
+- PLAN.md/DOC.md describe chip antenna, onboard buttons and PJ-320 jack; built board uses IPEX, button header, aux pads.
+- Repo housekeeping: committed KiCad lock file `btaudio/~btaudio.kicad_pro.lck`, stray `btaudio/C:\Users\User\Desktop\kleplace.log`.
+
+**Design notes for a possible rev 2**
+- Feed LDO from VBAT *or* VIN (power path) so the board works on USB without battery.
+- Route module MCLK (pin 6) to PCM5102A SCK as on Ebyte dev board (optional, with 0 Ω / jumper).
+- Add test pads: 1V8 (pad 22), I2S lines, AMP_EN; add jumper/0 Ω on AMP_EN; footprint for SPI flash access is not possible (inside module).
+- Consider break-out of SPK pins 34–37 to pads as fallback for DAC-firmware modules.
