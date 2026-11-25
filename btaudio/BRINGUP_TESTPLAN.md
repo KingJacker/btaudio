@@ -264,3 +264,10 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
   (b) bad joint pads 3–5, (c) firmware actually routes to internal DAC (SPK pins 34–37).
 - Next: DC at castellations 3–6 while playing · 100 k pull-up test on pad 4/5 (driven-low vs floating input)
   · AC V on 37–36 / 35–34 · continuity 3→U2-14, 4→U2-15, 5→U2-13 · ask Ebyte: master/slave, pins, format, MCLK.
+- At module castellations while playing: pads 3/4/5/6 ≈ 50 mV (no activity)
+- 100 k pull-up to 3V3 on pad 4 (LRCK): reads **3.0 V → pin is a floating input, not driven**
+- **Conclusion (strong): module #3 firmware runs I2S as SLAVE (or I2S not enabled). PCM5102A is slave-only → no clocks → silence.**
+- Next: pull-up test on pad 5 (BCK) and pad 3 (DATA) · AC V on SPK 37–36 / 35–34 · optional Pico clock-injection test
+  (LRCK 48 kHz / BCK 3.072 MHz into pads 4/5 → DATA should appear if slave).
+- Fix options: Ebyte master-mode firmware/config · own config change after 1.8 V flash backup (native Windows, battery attached)
+  · HW: external clock master or master-capable DAC (e.g. PCM5122) in next revision.
