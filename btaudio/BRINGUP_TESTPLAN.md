@@ -217,3 +217,7 @@ Quick diagnosis:
   unpowered while the chip core runs from VCHG. Board effectively requires a battery to function.
 - Open: 3V3 on USB-only, 1V8 stability, LED pattern, Phase 3 (USB + battery), `dmesg`/`lsusb` with and without battery.
   Was a battery attached when it worked / during the config session?
+- USB only (native Linux, no VM): 3V3 = 0 V · 1V8 steady 1.8 V · LEDs off (expected: LEDs fed from VBAT) · SW1 no effect
+- `dmesg -w` / `lsusb`: **module never enumerates** (only internal Goodix reader reset seen). Cable data capability not yet verified.
+- User confirms: **battery was connected when the board worked.** USB-only (no battery) is a non-functional state by design.
+- Next: verify data cable, Phase 3 (USB + LiPo) with `dmesg -w`/`lsusb`, search `journalctl -k` for historical VID:PID of the module.
