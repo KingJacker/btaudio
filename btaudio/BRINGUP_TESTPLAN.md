@@ -246,3 +246,11 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 - WSON-8 pinout: 1 CS# · 2 SO/IO1 · 3 WP#/IO2 · 4 GND · 5 SI/IO0 · 6 SCLK · 7 HOLD#/IO3 · 8 VCC — tie WP#/HOLD# to VCC.
 - Plan: desolder flash from #2 → read twice with flashrom → compare sha256 → check `hexdump`/`strings`
   (all FF = erased; readable strings = unencrypted, cloning viable; random = likely encrypted).
+
+### Module #3 fitted — 2026-11-25
+
+- Powered from bench supply on J6 + SW1 (no PC): **LEDs blink, BT pairing works** → board + module #3 OK
+- Audio: nothing on output (DMM Hz on audio out shows nothing), nothing audible in headphones
+- Next: Phase 4 stage-by-stage with DMM (clock ≈ 1.6 V DC trick): LRCK/BCK/DATA at U2, VNEG/LDOO, DAC out C28/C29,
+  AMP_EN (R12), HPVSS (C33), HP out J3. Check module label is (I2S) variant.
+  If AMP_EN low: test via 1 kΩ from 3V3 to EN (not a hard short — PIO[20] may be driving low).
