@@ -202,3 +202,8 @@ Quick diagnosis:
   Consistent with corrupted flash: on USB, VCHG presence would retrigger boot → "bootloop".
 - Open: 3V3 level, SYS_CTRL (pad 13) voltage while SW1 held, RST level, long-press / held-at-power-on test,
   meter range used for current (µA range burden voltage can brown out boot).
+- Follow-up: 3V3 = 3.3 V ✔ · SYS_CTRL (SW1 side) = 3.8 V while pressed, 0 V released ✔ · RST = 3.3 V ✔
+- SW1 held 10 s: current stays ~0 · SW1 held during power-up: no change · 1V8 never rises (DMM)
+- **Verdict: carrier board OK (power, SYS_CTRL, RST). Module does not respond to SYS_CTRL on VBAT-only.**
+  Initial ~5 mA/1 s is likely PCM5102A startup → standby (no clocks), not the module.
+- Next: retry at VBAT 4.1 V (battery-threshold config?), DMM MIN/MAX on 1V8; then Phase 2 (USB, `dmesg -w`, `lsusb`).
