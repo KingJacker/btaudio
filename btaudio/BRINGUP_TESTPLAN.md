@@ -192,3 +192,13 @@ Quick diagnosis:
 - ANT (46)→GND MΩ; BT RF previously confirmed working (LED behaviour, connection)
 - 1V8 (pad 22) not routed on PCB; →GND MΩ · RST (pad 32)→GND kΩ (compare against an unused PIO pad)
 - **Verdict: no solder bridges or shorts. Phase 0 pass.**
+
+### Phase 1 (partial, multimeter only — no scope) — 2026-11-25
+
+- Bench supply on J6 (VBAT), no USB
+- At power-on: brief ~7 mV blip (on 1V8 pad?), supply current ~5 mA for ~1 s, then ~0
+- Pressing SW1: no change
+- Interpretation (tentative): chip attempts boot once, fails or goes dormant; 1V8 never comes up.
+  Consistent with corrupted flash: on USB, VCHG presence would retrigger boot → "bootloop".
+- Open: 3V3 level, SYS_CTRL (pad 13) voltage while SW1 held, RST level, long-press / held-at-power-on test,
+  meter range used for current (µA range burden voltage can brown out boot).
