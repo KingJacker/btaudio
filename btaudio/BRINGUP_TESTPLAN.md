@@ -281,3 +281,20 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
   version mismatch, or undefined power state). Unknown which — compare flash dumps of #2 (bricked) vs #3 (good) to find out.
 - Likely USB debug disabled in Ebyte production firmware → Ebyte is the primary route for I2S master config / factory image.
 - Rule: no Qualcomm tool on module #3 until a verified flash backup exists; then native Windows only, VBAT supplied.
+
+### Ebyte dev board EWT104-DA10 analysis (from parts/EWM104-BT5125-PCB/EWT104-DA10_UserManual_EN_V1.1.pdf)
+
+- I2S DAC (item 22) = **TI PCM5102A** (marking readable in product photo) — same DAC as btaudio. Header: P_VDD, P_MCK, P_BCK, P_DIN, P_SCK, P_VIO, P_GND.
+- Headphone amp (item 17) = QFN, header TPA_VDD/TPA_EN → likely TPA6132A2. 3W speaker amp (item 19) SOIC-16 (≈ "ES8405", unclear).
+- All peripherals connected via jumper headers; VDD_PADS switchable 3.3 V / 1.8 V; I2S_OUT jack = PCM5102A output.
+- Manual: (I2S) module works out of the box via I2S_OUT → **factory I2S firmware must be I2S master** (PCM5102A is slave-only).
+- Dev board routes module MCLK (pin 6) to DAC; btaudio leaves MCLK NC with PCM5102A SCK → GND (valid: PLL from BCK).
+- **Revised theory:** module #3 likely carries (DAC) firmware despite (I2S) label → I2S pins unused.
+
+### Status at end of 2026-11-25
+
+- Ebyte insists module is (I2S). Pending decisive test: **AC V on SPK pins 37–36 / 35–34 while playing 1 kHz.**
+  - Signal present → wrong (DAC) firmware → send evidence to Ebyte, request replacement or I2S firmware image.
+  - No signal → not simply wrong firmware → Pico clock-injection test, flash dump.
+- Before reordering: prefer EWT104-DA10 dev board + (I2S) module from official Ebyte store as known-good reference.
+- Order 1.8 V SPI flash adapter (needed for backup/forensics either way).
