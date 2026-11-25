@@ -254,3 +254,8 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 - Next: Phase 4 stage-by-stage with DMM (clock ≈ 1.6 V DC trick): LRCK/BCK/DATA at U2, VNEG/LDOO, DAC out C28/C29,
   AMP_EN (R12), HPVSS (C33), HP out J3. Check module label is (I2S) variant.
   If AMP_EN low: test via 1 kΩ from 3V3 to EN (not a hard short — PIO[20] may be driving low).
+- Phase 4 (module #3, DMM): LRCK/BCK/DATA at U2 = mV (no I2S) · DMM Hz mode reads nothing · VNEG = 0 V (DAC in standby, no clocks)
+  · LDOO = 1.9 V (DAC powered) · C28/C29 = 0 Vrms · AMP_EN = 0 V · J3 L/R = nothing
+- **Verdict: no I2S output from module #3 → everything downstream idle.** Board I2S path previously produced (quiet) audio with module #1.
+- Next: confirm phone A2DP "Media audio" active · module label = (I2S) variant? (else test SPK pins 34–37)
+  · measure I2S directly at module castellations 3/4/5 while playing · continuity pad 3→U2-14, 4→U2-15, 5→U2-13, 54→R12.
