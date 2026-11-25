@@ -207,3 +207,13 @@ Quick diagnosis:
 - **Verdict: carrier board OK (power, SYS_CTRL, RST). Module does not respond to SYS_CTRL on VBAT-only.**
   Initial ~5 mA/1 s is likely PCM5102A startup → standby (no clocks), not the module.
 - Next: retry at VBAT 4.1 V (battery-threshold config?), DMM MIN/MAX on 1V8; then Phase 2 (USB, `dmesg -w`, `lsusb`).
+- VBAT = 4.1 V: still no boot, 1V8 ~8 mV blip for ~1 s then 0.
+
+### Phase 2 (partial) — USB only, no battery
+
+- VIN = 5.0 V · **1V8 = 1.8 V (chip alive, powered from VCHG)** · VBAT ≈ 180 mV, slowly decaying (charger not driving VBAT)
+- **Key finding:** module silicon/PMU alive → not a hardware-dead module. VBAT-only no-boot points to firmware/config.
+- **Design issue:** U5 LDO is fed from VBAT. With USB but no battery, VBAT ≈ 0 → 3V3 ≈ 0 → VDD_PADS1/3_7, DAC, amp
+  unpowered while the chip core runs from VCHG. Board effectively requires a battery to function.
+- Open: 3V3 on USB-only, 1V8 stability, LED pattern, Phase 3 (USB + battery), `dmesg`/`lsusb` with and without battery.
+  Was a battery attached when it worked / during the config session?
