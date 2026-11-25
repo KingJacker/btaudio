@@ -178,3 +178,17 @@ Quick diagnosis:
 - `dmesg` excerpt and `lsusb -v` output
 - Which config tool was used and what was changed when the modules bricked
 - The flash chip marking, if you open a bricked module's shield
+
+---
+
+## Results log
+
+### Phase 0 — 2026-11-25 (board with bricked module #2 fitted)
+
+- Gain: JP1 (G0) and JP2 (G1) both to GND → **–6 dB** (lowest; not enough to explain "very quiet")
+- SW6 is fitted as a pushbutton (normally open)
+- 3V3→GND: kΩ range · VBAT→GND: kΩ range · VIN→GND: MΩ range → no rail shorts
+- Pad pairs: 13/14 OL · 9/10, 7/8, 8/9, 11/12, 31/32, 3/4/5 MΩ · 21/22, 22/23, 53/54 kΩ (through IC / R12, not bridges)
+- ANT (46)→GND MΩ; BT RF previously confirmed working (LED behaviour, connection)
+- 1V8 (pad 22) not routed on PCB; →GND MΩ · RST (pad 32)→GND kΩ (compare against an unused PIO pad)
+- **Verdict: no solder bridges or shorts. Phase 0 pass.**
