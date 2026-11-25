@@ -259,3 +259,8 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 - **Verdict: no I2S output from module #3 → everything downstream idle.** Board I2S path previously produced (quiet) audio with module #1.
 - Next: confirm phone A2DP "Media audio" active · module label = (I2S) variant? (else test SPK pins 34–37)
   · measure I2S directly at module castellations 3/4/5 while playing · continuity pad 3→U2-14, 4→U2-15, 5→U2-13, 54→R12.
+- Module #3 label confirmed **EWM104-BT5125(I2S)** (Ebyte insists package marking "I" = I2S). LED pattern follows play/pause → A2DP streaming works.
+- Hypotheses for missing I2S: (a) firmware I2S in **slave** mode (PCM5102A is slave-only → no clocks anywhere),
+  (b) bad joint pads 3–5, (c) firmware actually routes to internal DAC (SPK pins 34–37).
+- Next: DC at castellations 3–6 while playing · 100 k pull-up test on pad 4/5 (driven-low vs floating input)
+  · AC V on 37–36 / 35–34 · continuity 3→U2-14, 4→U2-15, 5→U2-13 · ask Ebyte: master/slave, pins, format, MCLK.
