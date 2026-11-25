@@ -271,3 +271,8 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
   (LRCK 48 kHz / BCK 3.072 MHz into pads 4/5 → DATA should appear if slave).
 - Fix options: Ebyte master-mode firmware/config · own config change after 1.8 V flash backup (native Windows, battery attached)
   · HW: external clock master or master-capable DAC (e.g. PCM5122) in next revision.
+- Correction (user recollection): module #1 most likely **also had no I2S output** (suspected wrong variant back then);
+  the "very quiet audio" observation is unreliable → dropped. The config session that bricked #1/#2 was likely an attempt to fix I2S.
+- Working theory: Ebyte (I2S) firmware ships with I2S slave/disabled. Fix requires config/firmware change → **flash backup first**.
+- Order: Pico clock-injection test → email Ebyte with measurements → 1.8 V adapter + dump #3 (verify sha256)
+  → single config change (I2S master) on native Windows with VBAT supplied. Open: which tool / setting was used in the bricking session.
