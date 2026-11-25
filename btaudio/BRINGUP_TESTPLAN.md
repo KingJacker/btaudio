@@ -221,3 +221,18 @@ Quick diagnosis:
 - `dmesg -w` / `lsusb`: **module never enumerates** (only internal Goodix reader reset seen). Cable data capability not yet verified.
 - User confirms: **battery was connected when the board worked.** USB-only (no battery) is a non-functional state by design.
 - Next: verify data cable, Phase 3 (USB + LiPo) with `dmesg -w`/`lsusb`, search `journalctl -k` for historical VID:PID of the module.
+- USB-C cable verified with phone (enumerates as 0e8d:2008).
+
+### Phase 3 (partial) — USB + bench supply on VBAT
+
+- 3V3 = 3.3 V · LEDs off · **no USB enumeration** (`dmesg`/`lsusb` show nothing from module)
+- Open: 1V8, supply current, SW1 reaction, phone visibility, `journalctl -k` history of the module's VID:PID.
+
+### Conclusion so far (module #2)
+
+Carrier board OK. PMU wakes on VCHG (1V8 present) but application firmware never runs in any power mode
+(no LEDs, no USB, no SYS_CTRL response) → consistent with corrupted flash. Recovery only via direct SPI flash access.
+
+Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programmer, check `strings` for encryption;
+(2) fit #3 per Phase 5, power from VBAT + SW1 only, no PC; (3) Phase 4 audio tests on #3;
+(4) dump #3 flash with programmer → golden image to restore #1/#2.
