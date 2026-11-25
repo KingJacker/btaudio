@@ -276,3 +276,8 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 - Working theory: Ebyte (I2S) firmware ships with I2S slave/disabled. Fix requires config/firmware change → **flash backup first**.
 - Order: Pico clock-injection test → email Ebyte with measurements → 1.8 V adapter + dump #3 (verify sha256)
   → single config change (I2S master) on native Windows with VBAT supplied. Open: which tool / setting was used in the bricking session.
+- Bricking session detail: Qualcomm proprietary tools (several versions) in a Windows VM on Linux; **tools never connected,
+  no config was ever changed** → brick caused by the connection attempt itself (re-enumeration under VM passthrough,
+  version mismatch, or undefined power state). Unknown which — compare flash dumps of #2 (bricked) vs #3 (good) to find out.
+- Likely USB debug disabled in Ebyte production firmware → Ebyte is the primary route for I2S master config / factory image.
+- Rule: no Qualcomm tool on module #3 until a verified flash backup exists; then native Windows only, VBAT supplied.
