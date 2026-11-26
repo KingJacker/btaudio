@@ -363,3 +363,11 @@ Also collect: photo of module label, photo of fitted board, phone screenshot (co
 - 2026-11-26: CSR USB-SPI adapter on hand (has 1V8 + VS voltage-select pins). Speaks CSR BlueCore SPI-debug protocol —
   **not applicable to QCC5125** (QCC51xx uses USB/TRB debug; module has no debug-SPI pins) and not a flashrom programmer,
   unless hardware is FTDI MPSSE (lsusb 0403:6014/6010/6011) → then usable via `flashrom -p ft2232_spi` at 1.8 V. lsusb = **0a12:0042 (CSR SPI Converter, CSR protocol) → not usable.** Order CH341A + 1.8 V kit.
+
+### Phase 6 results — 2026-11-26 (Tektronix TBS1104)
+
+- Module #3 label: "EWM104-BT5125 · Version: I · SN S5203841S00017" (photo: imgs/bringup/module3_label_fitted.jpg)
+- **6.1 L channel (pins 37/36): clean 1 kHz sine** — 1.0001 kHz, ≈ 1.5 Vpp differential (≈ 0.5 Vrms), each leg ≈ 0.7 Vpp.
+  Photos: imgs/bringup/scope_spk_L_37-36_math.jpg, imgs/bringup/scope_spk_L_37-36_channels.jpg
+- **→ PROOF: module routes audio to internal DAC (SPK outputs) = (DAC) firmware behaviour, despite "Version: I" (I2S) label.**
+- Pending for report: 6.1 R channel (35/34) · 6.2 screenshot pads 4/5 flat (Auto trigger) ideally with pin 37 on CH3 · 6.3 pull-up on pad 4.
