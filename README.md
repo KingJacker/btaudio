@@ -1,50 +1,62 @@
-# btaudio — Audiophiles Bluetooth 5.1 Upgrade-Board für Kopfhörer
+# btaudio — Bluetooth 5.1 upgrade board for wired headphones
 
-Ein Wireless-Upgrade-Modul für Kabelkopfhörer. Kein All-in-One-Kompromiss: drei dedizierte Stufen, damit
-Funk, Wandlung und Verstärkung sauber getrennt bleiben.
+A wireless upgrade module for wired headphones. Instead of an all-in-one chip, it uses three dedicated stages,
+so the radio, the conversion and the amplification stay cleanly separated.
 
-## Architektur
+## Architecture
 
 ```
-EWM104-BT5125 (QCC5125, BT 5.1)  →[I2S]→  PCM5102A (DAC)  →[Analog]→  TPA6132A2 (Amp)  →  Kopfhörer
-          Empfang                            Wandlung                     Verstärkung
+EWM104-BT5125 (QCC5125, BT 5.1)  →[I2S]→  PCM5102A (DAC)  →[analog]→  TPA6132A2 (amp)  →  headphones
+          receive                           convert                       amplify
 ```
 
-**Stufe 1 — Empfang:** Das EBYTE-Modul EWM104-BT5125(I2S) mit Qualcomm QCC5125 empfängt das Audiosignal (aptX HD, AAC, SBC)
-und gibt es rein digital über I2S weiter.
+**Stage 1 — Receive:** the EBYTE EWM104-BT5125(I2S) module with a Qualcomm QCC5125 receives the audio (aptX HD, AAC, SBC)
+and passes it on digitally over I2S.
 
-**Stufe 2 — Wandlung:** Der PCM5102A wandelt das I2S-Signal in ein analoges Line-Signal. Er läuft im PLL-Modus, ohne MCLK.
+**Stage 2 — Convert:** the PCM5102A turns the I2S stream into an analog line signal. It runs in PLL mode, without MCLK.
 
-**Stufe 3 — Verstärkung:** Der TPA6132A2 treibt die Kopfhörer direkt an (DirectPath / capless), ohne Elkos im Signalweg.
+**Stage 3 — Amplify:** the TPA6132A2 drives the headphones directly (DirectPath / capless), with no electrolytic
+caps in the signal path.
 
 ## Board (rev 1)
 
-- 4 Lagen, 51 × 22 mm
-- USB-C für die Ladung (über den Lader im Modul), LiPo an einer Stiftleiste
-- IPEX-Anschluss (U.FL) für eine externe Antenne
-- Lötpads für das Kopfhörerkabel, Stiftleiste für externe Taster
-- Verstärkung per Lötbrücken einstellbar (−6 / 0 / 3 / 6 dB)
+- 4 layers, 51 × 22 mm
+- USB-C for charging (through the module's built-in charger); LiPo on a pin header
+- IPEX (U.FL) connector for an external antenna
+- Solder pads for the headphone cable; pin header for external buttons
+- Gain set with solder jumpers (−6 / 0 / 3 / 6 dB)
 
-Details zum Aufbau: [PLAN.md](PLAN.md) · Projekt-Doku: [DOC.md](DOC.md)
+Full design: [PLAN.md](PLAN.md) · Project notes (German): [DOC.md](DOC.md)
 
 ## Status
 
-Platine gefertigt und bestückt, Trägerplatine verifiziert. Das gelieferte Modul („Version: I") gibt den Ton jedoch
-analog an den SPK-Pins aus statt über I2S. Es verhält sich also wie die DAC-Firmware. Die Klärung mit EBYTE läuft.
-Messprotokoll: [btaudio/BRINGUP_TESTPLAN.md](btaudio/BRINGUP_TESTPLAN.md) · Bericht an EBYTE: [btaudio/EBYTE_REPORT.md](btaudio/EBYTE_REPORT.md)
+The board has been manufactured, assembled and verified. However, the delivered module ("Version: I") outputs its
+audio on the analog SPK pins instead of I2S, so it behaves like the DAC firmware. This is being resolved with EBYTE.
 
-## Schaltplan
+- Bring-up log: [btaudio/BRINGUP_TESTPLAN.md](btaudio/BRINGUP_TESTPLAN.md)
+- Report to EBYTE: [btaudio/EBYTE_REPORT.md](btaudio/EBYTE_REPORT.md)
 
-![Schaltplan](imgs/schematic.png)
+## Schematic
 
-## Platine (3D-Ansicht)
+![Schematic](imgs/schematic.png)
 
-![PCB 3D-Render](imgs/btaudio.png)
+## PCB (3D view)
+
+![PCB 3D render](imgs/btaudio.png)
 
 ## Hardware
 
-- **BT-Modul:** EBYTE EWM104-BT5125(I2S), Qualcomm QCC5125 (Bluetooth 5.1)
+- **BT module:** EBYTE EWM104-BT5125(I2S), Qualcomm QCC5125 (Bluetooth 5.1)
 - **DAC:** Texas Instruments PCM5102A
-- **Amp:** Texas Instruments TPA6132A2 (DirectPath-Kopfhörerverstärker)
-- **LDO:** Microchip MCP1700-3302 (3,3 V)
-- **Design-Tool:** KiCad
+- **Amp:** Texas Instruments TPA6132A2 (DirectPath headphone amplifier)
+- **LDO:** Microchip MCP1700-3302 (3.3 V)
+- **Design tool:** KiCad
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `btaudio/` | KiCad project (schematic, PCB, footprints), BOM (`btaudio.csv`, `bom/ibom.html`) |
+| `btaudio/production/` | Gerber and drill files |
+| `parts/` | Datasheets, symbols, footprints and 3D models of the main parts |
+| `imgs/` | Renders and bring-up photos (`imgs/bringup/`) |

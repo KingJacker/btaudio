@@ -1,2 +1,6 @@
 /btaudio/.history/
 /btaudio/btaudio-backups
+
+# KiCad lock files and plugin logs
+*.lck
+*kleplace.log

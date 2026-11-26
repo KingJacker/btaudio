@@ -331,7 +331,7 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 **Doc errors to fix later**
 - PLAN.md TPA6132A2 gain table is wrong: real gains are –6/0/3/6 dB (G1G0 = 00/01/10/11). Board has both gain pins → GND (–6 dB).
 - PLAN.md/DOC.md describe chip antenna, onboard buttons and PJ-320 jack; built board uses IPEX, button header, aux pads.
-- Repo housekeeping: committed KiCad lock file `btaudio/~btaudio.kicad_pro.lck`, stray `btaudio/C:\Users\User\Desktop\kleplace.log`.
+- Repo housekeeping: done (lock file and stray log removed, added to .gitignore).
 
 **Design notes for a possible rev 2**
 - Feed LDO from VBAT *or* VIN (power path) so the board works on USB without battery.
