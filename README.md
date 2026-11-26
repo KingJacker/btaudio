@@ -26,7 +26,7 @@ caps in the signal path.
 - Solder pads for the headphone cable; pin header for external buttons
 - Gain set with solder jumpers (−6 / 0 / 3 / 6 dB)
 
-Full design: [PLAN.md](PLAN.md) · Project notes (German): [DOC.md](DOC.md)
+Full design: [PLAN.md](PLAN.md) · Project notes: [DOC.md](DOC.md)
 
 ## Status
 
