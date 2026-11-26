@@ -338,3 +338,5 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 - Route module MCLK (pin 6) to PCM5102A SCK as on Ebyte dev board (optional, with 0 Ω / jumper).
 - Add test pads: 1V8 (pad 22), I2S lines, AMP_EN; add jumper/0 Ω on AMP_EN; footprint for SPI flash access is not possible (inside module).
 - Consider break-out of SPK pins 34–37 to pads as fallback for DAC-firmware modules.
+- 2026-11-26: AVR Dragon on hand — **not usable** as SPI flash programmer (AVR-only protocols, no flashrom support).
+  Options: CH341A + 1.8 V adapter kit (preferred), or Raspberry Pi `linux_spidev` + 1.8 V level shifter (e.g. TXS0108E).
