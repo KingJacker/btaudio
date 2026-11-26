@@ -26,6 +26,13 @@ behaviour of the **(DAC)** version.
 
 The module works normally: it boots, pairs, plays, and the LEDs follow play/pause.
 
+## Key evidence — one capture, same moment
+
+**CH4 (green): analog SPK output, 1 kHz sine. CH1–CH3: I2S pins, flat.**
+Captured simultaneously during A2DP playback (1 ms/div).
+
+![SPK output vs I2S pins, simultaneous](../imgs/bringup/scope_simultaneous_spk_vs_i2s.jpg)
+
 ## Measurement 1 — analog SPK outputs (pins 37 / 36)
 
 Clean **1.000 kHz sine** on SPK-LP (37) and SPK-LN (36):

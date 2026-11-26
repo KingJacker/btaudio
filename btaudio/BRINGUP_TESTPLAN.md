@@ -374,3 +374,4 @@ Also collect: photo of module label, photo of fitted board, phone screenshot (co
 - **6.2 I2S pads 3/4/5/6 during active playback: all flat** (100 mV/div, 1 µs/div, Auto) — imgs/bringup/scope_i2s_pads3-6_flat_playing.jpg
 - 6.3: DMM result (pad 4 → 3.0 V with 100 k pull-up) used; no separate scope shot needed.
 - **Report to Ebyte written: btaudio/EBYTE_REPORT.md** (fill in order number + name before sending; attach imgs/bringup photos).
+- Simultaneous capture: CH4 = SPK output 1 kHz sine, CH1–CH3 = I2S pins flat — imgs/bringup/scope_simultaneous_spk_vs_i2s.jpg (added to report as key evidence)
