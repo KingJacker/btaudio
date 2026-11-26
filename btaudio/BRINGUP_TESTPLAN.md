@@ -371,3 +371,6 @@ Also collect: photo of module label, photo of fitted board, phone screenshot (co
   Photos: imgs/bringup/scope_spk_L_37-36_math.jpg, imgs/bringup/scope_spk_L_37-36_channels.jpg
 - **→ PROOF: module routes audio to internal DAC (SPK outputs) = (DAC) firmware behaviour, despite "Version: I" (I2S) label.**
 - Pending for report: 6.1 R channel (35/34) · 6.2 screenshot pads 4/5 flat (Auto trigger) ideally with pin 37 on CH3 · 6.3 pull-up on pad 4.
+- **6.2 I2S pads 3/4/5/6 during active playback: all flat** (100 mV/div, 1 µs/div, Auto) — imgs/bringup/scope_i2s_pads3-6_flat_playing.jpg
+- 6.3: DMM result (pad 4 → 3.0 V with 100 k pull-up) used; no separate scope shot needed.
+- **Report to Ebyte written: btaudio/EBYTE_REPORT.md** (fill in order number + name before sending; attach imgs/bringup photos).
