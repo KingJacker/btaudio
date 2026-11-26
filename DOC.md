@@ -1,69 +1,99 @@
-
-***
-
 # Projekt-Dokumentation: Audiophiles Bluetooth 5.1 Kopfhörer-Modul
 
 ## 1. Projektübersicht & Architektur
-Das Ziel dieses Projekts ist die Entwicklung eines eigenen Carrier-Boards (Trägerplatine), um einen alten Kopfhörer mit modernem Bluetooth 5.1 auszustatten. Anstatt diskrete Bluetooth-SoCs zu verwenden (die oft hinter NDAs versteckt oder schwer zu löten sind), wird ein **System-on-Module (SoM)** Ansatz gewählt.
+Ziel des Projekts ist eine eigene Trägerplatine, die einen alten Kabelkopfhörer mit Bluetooth 5.1 ausstattet.
+Statt eines diskreten Bluetooth-SoCs (oft hinter NDAs versteckt oder schwer zu löten) kommt ein **System-on-Module (SoM)** zum Einsatz.
 
-Um die höchste Audioqualität ohne störendes Hintergrundrauschen (oft durch das RF-Signal verursacht) zu erreichen, nutzt das Design eine strikt getrennte, audiophile Architektur:
-**Bluetooth-Modul (Digital I2S) $\rightarrow$ Separater I2S-DAC $\rightarrow$ Dedizierter Kopfhörerverstärker.**
+Für die beste Audioqualität ohne Hintergrundrauschen (oft vom RF-Signal verursacht) ist die Architektur strikt getrennt:
+**Bluetooth-Modul (digital, I2S) → separater I2S-DAC → dedizierter Kopfhörerverstärker.**
 
-## 2. Die Wahl des Bluetooth-Moduls: EBYTE EWM104-BT5125(I2S)
-Nach der Analyse des Datenblattes fiel die Wahl auf das EBYTE-Modul basierend auf dem **Qualcomm QCC5125** Chip.
-*   **Warum QCC5125?** Unterstützt echtes Stereo, Bluetooth 5.1 und High-End-Codecs wie aptX-HD und LDAC. (Der günstigere QCC3040 ist bei diesem Hersteller nur für Mono/TWS konfiguriert).
-*   **Warum die I2S-Variante?** Das Modul gibt ein rein digitales I2S-Signal aus. Die (DAC)-Variante des Moduls würde ein differentielles Analogsignal ausgeben, was zwingend einen externen Differenzverstärker erfordern würde und anfälliger für Rauschen ist.
-*   **Vorteil:** Das Modul bringt bereits einen Laderegler für den Li-Po-Akku mit!
+Der Aufbau der Platine (rev 1) ist in [PLAN.md](PLAN.md) beschrieben, die Messergebnisse in
+[btaudio/BRINGUP_TESTPLAN.md](btaudio/BRINGUP_TESTPLAN.md).
+
+## 2. Das Bluetooth-Modul: EBYTE EWM104-BT5125(I2S)
+*   **Warum QCC5125?** Echtes Stereo, Bluetooth 5.1 und High-End-Codecs wie aptX HD. Der günstigere QCC3040 ist bei
+    diesem Hersteller nur für Mono/TWS konfiguriert.
+*   **Warum die I2S-Variante?** Sie gibt das Audiosignal rein digital über I2S aus. Die (DAC)-Variante liefert ein
+    differentielles Analogsignal, das einen externen Differenzverstärker bräuchte und anfälliger für Rauschen ist.
+*   **Vorteil:** Das Modul hat einen Laderegler für den LiPo-Akku eingebaut.
+*   **Flash im Modul:** Macronix MX25U3232F, 32 Mbit, **1,8 V**. Auslesen und Beschreiben geht nur mit einem 1,8-V-Programmer.
+*   **Achtung (Bring-up):** Die gelieferten Module mit der Aufschrift „Version: I" geben den Ton an den analogen
+    SPK-Pins aus, die I2S-Pins bleiben hochohmig. Sie verhalten sich also wie die DAC-Firmware.
+    Siehe [btaudio/EBYTE_REPORT.md](btaudio/EBYTE_REPORT.md).
+*   **Achtung (Konfiguration):** Zwei Module wurden beim Verbindungsversuch mit den Qualcomm-Tools über USB-Passthrough
+    in eine Windows-VM unbrauchbar. Vor jedem Konfigurationsversuch den Flash sichern, nur unter nativem Windows
+    arbeiten, VBAT angeschlossen.
 
 ## 3. Die drei Kern-Blöcke der Schaltung
 
-### 3.1 Die Audio-Stufe ("DirectPath / Capless")
-*   **DAC (TI PCM5102A):** Wandelt das digitale I2S-Signal in ein sauberes analoges Line-Signal. Generiert seinen Systemtakt (MCLK) intern und benötigt nur wenige externe Bauteile.
-*   **Verstärker (TI TPA6132A2 / MAX97220):** Liefert den nötigen Strom für typische 32-Ohm Kopfhörertreiber, um einen satten Bass zu garantieren.
-*   *Architektur-Vorteil:* Beide ICs besitzen interne Charge-Pumps zur Erzeugung einer negativen Versorgungsspannung. Dadurch entfallen große DC-Blocking-Kondensatoren am Audioausgang, die den Klang verfälschen würden.
+### 3.1 Audio-Stufe (DirectPath / capless)
+*   **DAC (TI PCM5102A):** Wandelt I2S in ein analoges Line-Signal (bis ca. 2,1 Vrms). SCK liegt auf GND, der DAC
+    erzeugt seinen Systemtakt also per PLL aus BCK. Das Modul muss I2S-Master sein. Am Ausgang sitzt ein
+    RC-Filter (470 Ω / 2,2 nF).
+*   **Verstärker (TI TPA6132A2):** Liefert den Strom für 16–32-Ω-Kopfhörer. Der Eingang ist über 1 µF angekoppelt.
+    Die Verstärkung wird per Lötbrücken JP1/JP2 gewählt: **−6 / 0 / 3 / 6 dB**, gebaut mit −6 dB.
+    Freigabe über PIO[20] des Moduls (AMP_EN, 10 k Pull-down).
+*   *Architektur-Vorteil:* Beide ICs erzeugen ihre negative Versorgung mit einer internen Charge-Pump. Dadurch
+    entfallen die großen DC-Blocking-Kondensatoren am Kopfhörerausgang.
 
 ### 3.2 Stromversorgung & USB-C
-*   Der Akku wird direkt an den `VBAT`-Pin des EBYTE-Moduls angeschlossen.
-*   Die 5V-Spannung der USB-C Buchse geht an den `VCHG`-Pin des Moduls (internes BMS lädt den Akku).
-*   Für die modernen USB-C Power Delivery Netzteile müssen die Pins `CC1` und `CC2` der Buchse über jeweils einen **$5.1\,\text{k}\Omega$ Widerstand auf GND** gezogen werden.
-*   Ein extrem rauscharmer LDO-Regler macht aus der schwankenden Akkuspannung (3.0 - 4.2V) perfekte **3.3V** für den Audio-DAC und den Verstärker.
+*   Der Akku (Stiftleiste J6) hängt direkt an `VBAT` (Pin 14) und `VBAT_SENSE` (Pin 7) des Moduls.
+*   Die 5 V der USB-C-Buchse gehen an `VCHG` (Pin 10) und `VCHG_SENSE` (Pin 11). Das Modul lädt den Akku selbst.
+*   `CC1` und `CC2` der Buchse liegen über je **5,1 kΩ an GND**, damit USB-C-Netzteile 5 V liefern.
+*   Ein LDO (**MCP1700-3302**) macht aus der Akkuspannung 3,3 V für die I/O-Pins des Moduls, den DAC und den Verstärker.
+*   **Einschränkung rev 1:** Der LDO hängt nur an VBAT. Ohne Akku gibt es keine 3,3 V, und die Schaltung funktioniert
+    auch an USB nicht.
 
-### 3.3 Hochfrequenz (RF) & Antennendesign
-Das EBYTE-Modul besitzt keine integrierte Antenne (Stamp-Hole).
-*   Vom Modul-Pin `ANT` wird eine exakt **$50\,\Omega$ impedanzkontrollierte Leiterbahn** zu einer SMD-Keramikantenne geroutet.
-*   In Serie wird ein $0\,\Omega$ Widerstand als Brücke / Platzhalter für ein mögliches Matching-Netzwerk platziert.
+### 3.3 Hochfrequenz (RF) & Antenne
+Das EBYTE-Modul hat keine integrierte Antenne.
+*   Vom Pin `ANT` (46) führt eine 50-Ω-Leiterbahn über einen 0-Ω-Widerstand (L1) zu einem **IPEX-Anschluss (U.FL)**
+    für eine externe Antenne.
+*   Zwei unbestückte Shunt-Plätze (C17, C18) erlauben bei Bedarf ein π-Matching.
+
+### 3.4 Bedienung
+*   **SW1:** Taster von VBAT an `SYS_CTRL` (Einschalten). Nur kurz drücken; nie dauerhaft an VBAT legen.
+*   **SW6:** Reset (RST/PIO[1] an GND).
+*   **J1:** Stiftleiste für externe Taster an PIO[2] (Play/Vol+), PIO[3] (Pause/Vol−) und PIO[4] (Zurück/Pairing).
+*   **LEDs D4/D5:** an AIO[0]/AIO[1], versorgt aus VBAT über 1 kΩ.
 
 ---
 
-## 4. Bill of Materials (BOM) / Stückliste
+## 4. Stückliste (as built)
 
-| Kategorie | Bauteil / Funktion | Empfohlene(r) Typ(en) / Partnummer | Bauform | Stk. | Anmerkung / Aufgabe im Schaltplan |
+| Kategorie | Bauteil | Typ | Bauform | Stk. | Aufgabe |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Funk / Core** | **Bluetooth SoM** | EBYTE EWM104-BT5125(I2S) | Stamp Hole | 1 | Das Gehirn; liefert digitales Audio (I2S) & lädt den Akku. |
-| | **Keramik-Antenne** | Johanson 2450AT18A100E *oder* Yageo | SMD 0603/1206 | 1 | 2.4 GHz Chip-Antenne (vermeidet komplexes PCB-Antennendesign). |
-| | **RF-Matching** | $0\,\Omega$ Widerstand | SMD 0603 | 1 | Brücke in Serie zwischen Modul-Pin `ANT` und Antenne. |
-| **Audio** | **I2S Audio-DAC** | **Texas Instruments PCM5102A** | TSSOP-20 | 1 | Wandelt I2S (digital) exzellent in analoges Line-Signal um. |
-| | **Kopfhörer-Amp** | **TI TPA6132A2** *oder* **Maxim MAX97220** | WQFN / TDFN | 1 | Capless-Verstärker; liefert den nötigen Strom für satte Bässe. |
-| | **Audio-Buchse** | 3.5mm Klinkenbuchse (z.B. PJ-320D) | SMD oder THT | 1 | Optional; Kopfhörerkabel können auch direkt verlötet werden. |
-| **Power** | **USB-C Buchse** | 6-Pin oder 16-Pin Type-C | SMD | 1 | Ladeanschluss; 5V gehen an Pin 10 (`VCHG`) des Moduls. |
-| | **PD-Widerstände** | $5.1\,\text{k}\Omega$ Widerstand | SMD 0603 | 2 | Zwingend an `CC1` & `CC2` (gegen GND) für USB-C Erkennung. |
-| | **Li-Po Akku** | 3.7V, ca. 300 - 500 mAh mit BMS | JST-Stecker | 1 | Spannungsquelle; an Pin 14 (`VBAT`) und `GND`. |
-| | **3.3V LDO-Regler** | TI TPS7A2033 *oder* MIC5219-3.3YM5 | SOT-23-5 | 1 | Rauscharme 3.3V für DAC, Amp & IO-Signale. |
-| **Interface** | **Taster**| Standard Tactile Switch (Drucktaster) | SMD | 4 | Play/Pause, Vol+, Vol- und Power/Pairing. |
-| | **Status LEDs** | LED Rot & LED Blau | SMD 0603 | 2 | Für Systemstatus. |
-| | **LED-Widerstände** | ca. $470\,\Omega$ bis $1\,\text{k}\Omega$ | SMD 0603 | 2 | Strombegrenzung für die LEDs. |
-| **Passiv*** | **Kondensatoren 1** | $100\,\text{nF}$ ($0.1\,\mu\text{F}$), MLCC, X5R/X7R | SMD 0603 | ~ 8 | Decoupling: Jeder IC braucht einen nah am VCC-Pin! |
-| | **Kondensatoren 2** | $1\,\mu\text{F}$ und $2.2\,\mu\text{F}$, MLCC, X5R/X7R | SMD 0603 | ~ 5 | Für die internen Charge-Pumps von DAC und Verstärker. |
-| | **Kondensatoren 3** | $10\,\mu\text{F}$, MLCC, X5R/X7R | SMD 0603 | ~ 3 | Ein- und Ausgang des 3.3V LDO-Reglers. |
+| **Funk / Core** | Bluetooth-SoM | EBYTE EWM104-BT5125(I2S) | Stamp Hole | 1 | Empfang, I2S-Ausgang, Akku-Lader |
+| | Antennenanschluss | IPEX / U.FL (A-1JB) | SMD | 1 | Externe 2,4-GHz-Antenne |
+| | RF-Matching | 0 Ω (L1) + 2× NC (C17, C18) | 0402 | 3 | Serienbrücke / optionales π-Netz |
+| **Audio** | I2S-DAC | TI PCM5102AQPWRQ1 | TSSOP-20 | 1 | I2S → analog |
+| | Kopfhörer-Amp | TI TPA6132A2RTET | WQFN-16 | 1 | Capless-Kopfhörerverstärker |
+| | Audio-Anschluss | Lötpads (J3) | – | 1 | Kopfhörerkabel L / R / Masse |
+| **Power** | USB-C-Buchse | HRO TYPE-C-31-M-12 (16 Pin) | SMD | 1 | Laden, USB an das Modul |
+| | CC-Widerstände | 5,1 kΩ (R4, R5) | 0805 | 2 | USB-C-Erkennung |
+| | Akku-Anschluss | Stiftleiste 1×02 (J6) | 2,54 mm | 1 | LiPo 3,7 V |
+| | 3,3-V-LDO | Microchip MCP1700-3302 | SOT-23 | 1 | 3,3 V für I/O, DAC, Amp |
+| **Bedienung** | Power-Taster | TS-1088 (SW1) | SMD | 1 | SYS_CTRL |
+| | Reset | Taster auf Lötbrücken-Footprint (SW6) | SMD | 1 | RST/PIO[1] |
+| | Tasteranschluss | Stiftleiste 1×04 (J1) | 2,54 mm | 1 | Externe Taster PIO[2–4] |
+| | Gain-Wahl | Lötbrücke, 3 Pads (JP1, JP2) | SMD | 2 | TPA6132A2 G0/G1 |
+| | Status-LEDs | LED (D4, D5) | 0805 | 2 | Systemstatus |
+| | LED-Widerstände | 1 kΩ (R14, R15) | 0805 | 2 | Strombegrenzung |
+| **Passiv** | Ausgangsfilter | 470 Ω (R10, R11) + 2,2 nF (C28, C29) | 0805 | 4 | RC-Filter am DAC-Ausgang |
+| | Amp-Enable | 10 kΩ Pull-down (R12) | 0805 | 1 | AMP_EN |
+| | Kondensatoren | 1 µF ×7, 100 nF ×5, 2,2 µF ×4 | 0805 | 16 | Kopplung, Charge-Pumps, Decoupling |
+| | Kondensatoren | 10 µF ×5 | 1206 | 5 | Bulk: VBAT, 3V3, LDOO |
 
-*\*Tipp: Standard R/C-Bauteile am besten als komplettes "0603 SMD Resistor/Capacitor Book" bestellen.*
+Vollständige Liste: `btaudio/btaudio.csv` · Interaktive Stückliste: `btaudio/bom/ibom.html`
 
 ---
 
 ## 5. Goldene Regeln für das PCB-Layout
 
-1.  **Kupferfreie Zone (Antenne):** Weder auf dem Top-Layer noch auf den inneren Lagen oder dem Bottom-Layer darf Kupfer (weder Masse noch Signale) unter der Antenne verlaufen. Am besten platziert man die Keramikantenne ganz am Rand der Platine ("Overhang").
-2.  **Massekonzept (Grounding):** Es handelt sich um ein Mixed-Signal-Board. Halte den digitalen Funkt-Teil (Bluetooth) physisch auf der Leiterplatte getrennt vom analogen Teil (DAC-Ausgang & Verstärker). Achte auf eine solide und durchgängige Massefläche (Ground Plane) für den HF-Teil.
-3.  **Decoupling:** Die $100\,\text{nF}$ Kondensatoren müssen so nah wie physikalisch möglich an die Versorgungspins (VCC/VDD) der jeweiligen ICs platziert werden.
-4.  **Lötbarkeit:** Das EBYTE-Modul (Stamp-Hole), TSSOP und SOT-23 lassen sich von Hand mit dem Lötkolben löten. Für QFN-Packages (Verstärker) wird **Lötpaste und Heißluft** (Hot Air Station) benötigt.
-
+1.  **Antenne:** Die 50-Ω-Leitung vom Modul zum IPEX-Anschluss kurz halten. Unter dem Antennenbereich des Moduls und der
+    Leitung kein fremdes Signal führen.
+2.  **Massekonzept:** Mixed-Signal-Board. Den Funkteil (Bluetooth) räumlich vom Analogteil (DAC-Ausgang, Verstärker) trennen.
+    Für den HF-Teil eine durchgehende Massefläche vorsehen.
+3.  **Decoupling:** Die 100-nF-Kondensatoren so nah wie möglich an die Versorgungspins der ICs setzen.
+4.  **Lötbarkeit:** Das EBYTE-Modul (Stamp Hole), TSSOP und SOT-23 lassen sich mit dem Lötkolben löten. Für das QFN des
+    Verstärkers braucht man **Lötpaste und Heißluft**. Beim Modul kurz und mit Flussmittel löten; langes Heißluft-Reflow
+    kann die Bauteile unter dem Schirmblech verschieben.

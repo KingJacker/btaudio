@@ -14,7 +14,8 @@ behaviour of the **(DAC)** version.
 ## Module
 
 - Marking: EWM104-BT5125 · **Version: I** · Manufacturer: EBYTE · **SN: S5203841S00017**
-- Order number: `<ORDER NUMBER>`
+- Order: AliExpress, CDEBYTE IoT Module Store, ref. number **3072877780089435**, placed 20 May 2026,
+  3 × EWM104-BT5125(I2S)
 
 ## Test setup
 
@@ -66,7 +67,7 @@ does not do this. We believe it carries the **(DAC) firmware** although it is la
 
 ## Requests
 
-1. Please check the firmware loaded on modules from this batch (SN S5203841S00017).
+1. Please check the firmware loaded on modules from this order (ref. 3072877780089435, SN S5203841S00017).
 2. Please send replacement modules with verified **I2S master** firmware, **or** provide the
    correct (I2S) factory firmware image.
 3. Two further modules from the same order stopped booting after being connected over USB to the
@@ -79,4 +80,4 @@ does not do this. We believe it carries the **(DAC) firmware** although it is la
 Thank you. We can provide further measurements if needed.
 
 Best regards,
-`<NAME>`
+Dan Heller

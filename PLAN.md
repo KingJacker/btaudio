@@ -1,211 +1,178 @@
-# btaudio Schematic Plan
+# btaudio — As-Built Design (rev 1)
 
-Bluetooth headphone adapter. Phone pairs over BT → QCC5125 decodes → I2S → PCM5102A DAC → TPA6132A2 headphone amp → 3.5mm jack.
+Bluetooth headphone adapter. Phone pairs over BT → EWM104-BT5125 (QCC5125) → I2S → PCM5102A DAC → TPA6132A2 headphone amp → solder pads for the headphone cable.
+
+This file describes the board **as built and ordered** (KiCad project in `btaudio/`, production files in `btaudio/production/`).
+The original design plan has been replaced. Differences from the plan are listed at the end.
+Bring-up results: `btaudio/BRINGUP_TESTPLAN.md`.
 
 ---
+
+## Board
+
+- 4 layers (F.Cu, In1.Cu, In2.Cu, B.Cu), 51 × 22 mm
+- Single schematic sheet (`btaudio/btaudio.kicad_sch`)
 
 ## Parts
 
-| Ref | Part | Role |
-|-----|------|------|
-| U1 | EWM104-BT5125 (I2S variant) | BT5.1 receiver, I2S master |
-| U2 | PCM5102AQPWRQ1 | I2S DAC, stereo audio out |
-| U3 | TPA6132A2RTET | DirectPath headphone amp |
-| U4 | 3.3V LDO (e.g. MCP1700-3302E) | Vbat → 3.3V |
-| J1 | 3.5mm TRS jack | Headphone output |
-| J2 | Battery connector | LiPo cell (external) |
-| — | Charging board (MCP73871) | Already designed separately |
+| Ref | Part | Footprint | Role |
+|-----|------|-----------|------|
+| U1 | EBYTE EWM104-BT5125(I2S) | stamp hole, 54 pins | BT 5.1 receiver, should be I2S master |
+| U2 | TI PCM5102AQPWRQ1 | TSSOP-20 | I2S DAC |
+| U3 | TI TPA6132A2RTET | WQFN-16 3×3 | DirectPath (capless) headphone amp |
+| U5 | Microchip MCP1700-3302 | SOT-23 | VBAT → 3.3 V LDO |
+| J2 | USB-C receptacle, USB 2.0, 16 pin (HRO TYPE-C-31-M-12) | SMD | 5 V input + USB D+/D− to module |
+| J6 | 1×02 pin header | 2.54 mm | LiPo battery (VBAT, GND) |
+| J1 | 1×04 pin header "BTNS" | 2.54 mm | External buttons: GND, PIO[2], PIO[3], PIO[4] |
+| J3 | Solder pads "Audio" (aux-pads) | custom | Headphone cable: sleeve, R, L |
+| AE2 | IPEX / U.FL plug (A-1JB) | SMD | External 2.4 GHz antenna |
+| SW1 | Tactile switch TS-1088 "POWER_SW" | SMD | VBAT → SYS_CTRL (power on) |
+| SW6 | 2-pad footprint "SOFT RESET" (solder jumper, fitted with a pushbutton) | SMD | RST/PIO[1] → GND |
+| JP1, JP2 | 3-pad solder jumpers GAIN0 / GAIN1 | SMD | TPA6132A2 gain select |
+| D4, D5 | LED 0805 | SMD | Status LEDs on AIO[0] / AIO[1] |
+| NT1 | Net tie | SMD | Joins SGND_TRACE (headphone sleeve) to GND |
+
+Passives: 0805 caps and resistors, 1206 for 10 µF, 0402 for the RF match. Full list: `btaudio/btaudio.csv`, interactive BOM: `btaudio/bom/ibom.html`.
 
 ---
 
-## Power Architecture
+## Power
 
 ```
-USB-C ──► Vin (5V) ──► MCP73871 charging board ──► Vbat (3.7–4.2V LiPo)
-                │                                         │
-                │                                         ▼
-                │                                    LDO (U4)
-                │                                         │
-                │                                         ▼
-                │                                      3V3 rail
+USB-C VBUS ──► VIN ──► U1 VCHG (pin 10) + VCHG_SENSE (pin 11)    [module's internal charger]
                 │
-                └──► U1 VCHG (pin 10)   [charger input, 4–6.5V]
+               C7 1µF
 
-Vbat ──► U1 VBAT (pin 14)              [module battery supply]
-3V3  ──► U1 VDD_PADS1 (pin 23)         [PIO bank 1 logic voltage]
-3V3  ──► U1 VDD_PADS3_7 (pin 24)       [PIO bank 3–7 logic voltage]
-3V3  ──► U2 AVDD, DVDD, CPVDD
-3V3  ──► U3 VDD, HPVDD
+LiPo (J6) ──► VBAT ──► U1 VBAT (pin 14) + VBAT_SENSE (pin 7)
+                │      SW1 (power button) → U1 SYS_CTRL (pin 13)
+                │      R14/R15 → LEDs
+                └────► U5 MCP1700 ──► 3V3 ──► U1 VDD_PADS1 (23), VDD_PADS3_7 (24)
+                                         ──► U2 CPVDD (1), AVDD (8), DVDD (20), XSMT (17)
+                                         ──► U3 VDD (14)
 ```
 
-**Decoupling:** 100nF + 10µF on each supply rail at each IC.
+- USB-C: CC1 and CC2 each have 5.1 kΩ to GND (R4, R5). D+/D− go straight to the module's USB (pins 8, 9).
+- Decoupling:
+  - VBAT: C4 1 µF, C8 100 nF, C11 10 µF.
+  - 3V3: C5 1 µF, C13/C14/C24 100 nF, C25/C30/C31 10 µF, C34 2.2 µF.
+- U1 pin 22 (1V8 output) is not connected. CHG_EXT (pin 12) is not connected.
 
-**Note:** U1 pin 22 (1V8 output) — leave available as test point; not used to power VDD_PADS (keep both banks at 3.3V so I2S signals are 3.3V compatible with PCM5102A).
+> **Known limitation:** the LDO is fed from VBAT only. With USB but no battery, VBAT stays near 0 V, so 3V3 is off:
+> VDD_PADS, the DAC and the amp are unpowered while the module core runs from VCHG. **The board only works with a battery,
+> or a supply on J6.**
 
 ---
 
-## I2S Signal Chain
+## I2S
 
-```
-U1 EWM104-BT5125          U2 PCM5102A
-─────────────────          ───────────
-I2S_SCK   (pin 5)  ──────► BCK  (pin 13)   bit clock
-I2S_LRCK  (pin 4)  ──────► LRCK (pin 15)   LR clock
-I2S_SDATA (pin 3)  ──────► DIN  (pin 14)   data
-I2S_MCLK  (pin 6)  ──────► SCK  (pin 12)   system clock
-```
+| U1 pin | Signal | U2 pin |
+|---|---|---|
+| 3 | I2S_SDATA | 14 DIN |
+| 4 | I2S_LRCK | 15 LRCK |
+| 5 | I2S_SCK (bit clock) | 13 BCK |
+| 6 | I2S_MCLK | not connected |
 
----
+PCM5102A SCK (pin 12) is tied to GND, so the DAC derives its system clock from BCK with its internal PLL.
+BCK must be 32, 48 or 64 × fs. The PCM5102A is slave-only, so the module must be the I2S master.
 
-## Audio Chain
+## DAC — PCM5102A (U2)
 
-```
-U2 PCM5102A                          U3 TPA6132A2
-───────────                          ────────────
-OUTL (pin 6) ──[1µF]──────────────► INL+ (pin 2)
-                                     INL- (pin 1) ── GND
-
-OUTR (pin 7) ──[1µF]──────────────► INR+ (pin 3)
-                                     INR- (pin 4) ── GND
-
-                         U3 TPA6132A2              J1 3.5mm
-                         ────────────              ────────
-                         OUTL (pin 16) ───────────► L
-                         OUTR (pin 5)  ───────────► R
-                         HPVSS/PGND/SGND/EP ──────► GND sleeve
-```
-
-AC coupling caps (1µF) between PCM5102A and TPA6132A2 needed because PCM5102A uses internal charge pump; output may not be exactly 0V DC.
-
-**TPA6132A2 gain:** G0 (pin 6) and G1 (pin 7) set gain:
-- 00 = 6dB, 01 = 12dB, 10 = 18dB, 11 = 24dB
-- Start with 01 (12dB). G0 and G1 can be jumper-selectable or tied.
-
-**TPA6132A2 enable:** EN (pin 13) — pull high (3V3) through resistor. Could tie to a PIO for soft mute.
-
-**PCM5102A control pins:**
-| Pin | Name | Connect |
-|-----|------|---------|
+| Pin | Name | Connection |
+|---|---|---|
+| 1 / 8 / 20 | CPVDD / AVDD / DVDD | 3V3 |
+| 2, 4 | CAPP, CAPM | C15 2.2 µF flying cap |
+| 5 | VNEG | C16 2.2 µF to GND |
+| 6 / 7 | OUTL / OUTR | R10 / R11 470 Ω → C28 / C29 2.2 nF to GND (output RC filter) |
 | 10 | DEMP | GND (no de-emphasis) |
-| 11 | FLT | GND (normal latency filter) |
-| 16 | FMT | GND (I2S format, left-justified on high) |
-| 17 | XSMT | 3V3 (unmuted); or drive from PIO for soft-mute |
-| 18 | LDOO | 100nF to GND (internal LDO bypass) |
+| 11 | FLT | GND (normal-latency filter) |
+| 12 | SCK | GND (PLL from BCK) |
+| 16 | FMT | GND (I2S format) |
+| 17 | XSMT | 3V3 (unmuted) |
+| 18 | LDOO | C26 100 nF + C27 10 µF to GND |
 
----
-
-## SYS_CTRL Circuit (U1 pin 13)
-
-Datasheet warning: cannot pull directly to VBAT. Need delay circuit after power-on.
+## Headphone amp — TPA6132A2 (U3)
 
 ```
-Vbat ──[R 100k]──┬── MOSFET gate
-                 │
-                [C 10µF]
-                 │
-                GND
+PCM OUTL ─[470Ω]─┬─[C21 1µF]─► INL− (1)     INL+ (2) ── GND
+                C28 2.2nF
+PCM OUTR ─[470Ω]─┬─[C22 1µF]─► INR− (4)     INR+ (3) ── GND
+                C29 2.2nF
 
-MOSFET drain → SYS_CTRL (pin 13)
-MOSFET source → GND
+OUTL (16) ──► J3 pin 3 (L)
+OUTR (5)  ──► J3 pin 2 (R)
+SGND (15) ──► J3 pin 1 (sleeve) ──[NT1]── GND
 ```
 
-RC time constant ~1s delay before SYS_CTRL asserts. Use N-channel MOSFET (e.g. 2N7002).
-Add a parallel tactile button (RESET# / manual power-on) from SYS_CTRL to GND.
+- The signal goes into the inverting inputs; both channels are inverted equally.
+- Charge pump: C23 1 µF (CPP–CPN), C32 2.2 µF (HPVDD), C33 1 µF (HPVSS).
+- **EN (13)** ← U1 PIO[20] (pin 54, "AMP_EN"), with R12 10 kΩ pull-down. The amp only runs when the firmware drives PIO[20] high.
+- **Gain** (JP1 = G0, JP2 = G1; each jumper connects its pin to 3V3 or GND):
+
+| G1 | G0 | Gain |
+|---|---|---|
+| 0 | 0 | −6 dB (as built: both to GND) |
+| 0 | 1 | 0 dB |
+| 1 | 0 | 3 dB |
+| 1 | 1 | 6 dB |
+
+At 3.3 V the output swing is about 1 Vrms. With the PCM5102A at 2.1 Vrms full scale, 0 dB or more clips at full volume.
 
 ---
 
-## PIO / Button Assignments (default firmware)
+## Control
 
-| PIO | Pin | Function | Circuit |
-|-----|-----|----------|---------|
-| PIO[2] | 31 | Play / Vol+ | Tactile SW to GND, 10k pull-up to 3V3 |
-| PIO[3] | 26 | Pause / Vol- | Tactile SW to GND, 10k pull-up to 3V3 |
-| PIO[4] | 25 | Prev / BT pair | Tactile SW to GND, 10k pull-up to 3V3 |
-| PIO[5] | 28 | Next / BT disc | Tactile SW to GND, 10k pull-up to 3V3 |
-| PIO[20] | 54 | Amp enable | Tie to TPA6132A2 EN (via 10k) |
-| PIO[21] | 53 | LED indicator | LED + 330R to GND |
-| PIO[52] | 50 | LED indicator | LED + 330R to GND |
+| U1 pin | Function | Circuit |
+|---|---|---|
+| 13 SYS_CTRL | Power on | SW1 to VBAT (momentary; never tie permanently to VBAT) |
+| 32 RST/PIO[1] | Reset | SW6 to GND |
+| 31 PIO[2] | Play / Vol+ | J1 pin 2 (button to GND, external) |
+| 26 PIO[3] | Pause / Vol− | J1 pin 3 |
+| 25 PIO[4] | Prev / pairing | J1 pin 4 |
+| 28 PIO[5] | Next / disconnect | **not connected** |
+| 54 PIO[20] | Amp enable | U3 EN + R12 10 k pull-down |
+| 16 AIO[0]/LED[0] | LED | D4 + R14 1 kΩ from VBAT |
+| 17 AIO[1]/LED[1] | LED | D5 + R15 1 kΩ from VBAT |
 
----
-
-## LED Assignments
-
-| Pin | Name | Function |
-|-----|------|----------|
-| 16 | AIO[0]/LED[0] | Status LED (power on, pairing, etc.) |
-| 17 | AIO[1]/LED[1] | Second LED (optional) |
-
-Open-drain outputs — connect LED anode to 3V3 through resistor, cathode to pin.
-
----
+Not connected: MIC inputs and MIC_BIAS (39–43), SPK outputs (34–37), SPDIF_IN, all other PIO/AIO.
+The LEDs are powered from VBAT, so they cannot light without a battery.
 
 ## Antenna
 
-Pin 46 (ANT): 50Ω impedance. Either:
-- PCB trace antenna (already on module — no external connection needed for onboard antenna)
-- Or route to SMA connector through 50Ω trace for external antenna
+U1 ANT (pin 46) → L1 0 Ω (series, 0402) → AE2 IPEX connector. C17 / C18 (0402) are left unpopulated as shunt positions,
+for π-matching if needed. Bluetooth range was fine with an external antenna.
 
-Check module variant: EWM104-BT5125(I2S) has PCB trace antenna built in. If so, pin 46 may be NC or connect to a test point only.
+## GND
 
----
-
-## USB (pins 8, 9)
-
-USB_DN (pin 8), USB_DP (pin 9): full-speed USB for firmware/configuration.
-- Optional: break out to USB-C connector for debug/config access
-- Not required for normal operation
+U1 pins 15, 21, 38, 44, 45, 47.
 
 ---
 
-## GND Pins
+## Bring-up status (see `btaudio/BRINGUP_TESTPLAN.md`)
 
-Pins 15, 21, 38, 44, 45, 47 — all connect to GND plane.
+- Carrier board verified OK: power, SYS_CTRL, RST, no shorts or bridges.
+- Module #3 boots, pairs and streams. **Audio appears on the module's analog SPK pins (34–37), while the I2S pins stay
+  high-impedance.** The module behaves like the (DAC) firmware despite its "Version: I" label. Report to EBYTE:
+  `btaudio/EBYTE_REPORT.md`.
+- Modules #1 and #2 were bricked by connection attempts with the Qualcomm tools through Windows VM USB passthrough.
+  The on-module flash is a Macronix MX25U3232F (1.8 V) and needs a 1.8 V programmer to recover.
 
----
+## Changes from the original plan
 
-## Schematic Sheets (proposed)
+| Original plan | As built |
+|---|---|
+| Johanson ceramic chip antenna + π network | IPEX (U.FL) connector + 0 Ω / NC match |
+| 4 onboard tactile buttons with pull-ups | 1×04 header to external buttons (PIO2–4), PIO5 not connected |
+| SYS_CTRL RC/MOSFET delay circuit | Momentary button SW1 to VBAT |
+| 3.5 mm jack (PJ-320) | Solder pads J3 |
+| Battery connector | 1×02 pin header J6 |
+| TPA6132A2 gain 6/12/18/24 dB | Wrong values: real gains are −6/0/3/6 dB; built at −6 dB |
+| MCLK routed to DAC | MCLK not connected, DAC SCK to GND (PLL mode) |
+| Amp EN pull-up | 10 k pull-down; enabled only by PIO[20] |
 
-| Sheet | Contents |
-|-------|----------|
-| Root | Block diagram, power connectors, inter-sheet refs |
-| Power | LDO, decoupling, power rails, battery interface |
-| BT Module | U1 with all pin connections |
-| Audio | U2 (PCM5102A) + U3 (TPA6132A2) + J1 |
-| Control | Buttons, LEDs, SYS_CTRL delay circuit |
+## Ideas for rev 2
 
----
-
-## Finalized Decisions
-
-| # | Decision |
-|---|----------|
-| 1 | **Single sheet** — enlarge sheet size later as needed |
-| 2 | **MCP1700-3302E** LDO (low Iq ~1.6µA, good for battery life, SOT-23) |
-| 3 | **USB debug exposed** — USB_DN/DP break out to USB-C or micro-USB connector |
-| 4 | **TPA6132A2 gain: solder-tie G0/G1** — add schematic note "resolder to change gain" |
-| 5 | **MIC inputs: all NC** — headphone-only use case |
-| 6 | **SMD ceramic chip antenna** — Johanson 0433AT62A0020E (2.4GHz, 50Ω, 3.2×1.6mm) |
-
----
-
-## Antenna Detail
-
-Module ANT pin (46) is the RF port — module has no built-in antenna.
-
-```
-U1 ANT (pin 46) ──[50Ω trace]──► π matching network ──► Johanson 0433AT62A0020E
-```
-
-π matching network (tune at layout stage based on PCB stackup):
-- Series inductor + shunt caps either side (typical: 2.2nH series, 1pF shunt)
-- Leave footprints populated with 0Ω/DNP for tuning
-- Ground clearance required under antenna (no copper pour under chip antenna element)
-
----
-
-## Schematic Notes to Add
-
-- Near TPA6132A2 gain pins: *"G0/G1 soldered for 12dB gain. Reflow to change: 00=6dB 01=12dB 10=18dB 11=24dB"*
-- Near SYS_CTRL: *"RC delay ~1s. Do not pull directly to VBAT."*
-- Near MIC pins: *"MIC1/MIC2 inputs NC — headphone-only build"*
-- Near antenna: *"Tune π network for PCB stackup. No copper under antenna element."*
+- Power path: feed the LDO from VBAT **or** VIN, so the board works on USB without a battery.
+- Break out SPK pins 34–37 to pads, as a fallback for modules with DAC firmware.
+- Optional MCLK route (pin 6 → PCM5102A SCK) via a 0 Ω resistor, as on the EBYTE EWT104-DA10 dev board.
+- Test pads for 1V8 (pin 22), I2S, AMP_EN. Add a 0 Ω / jumper on AMP_EN to force the amp on.
+- Connect PIO[5] to the button header.
