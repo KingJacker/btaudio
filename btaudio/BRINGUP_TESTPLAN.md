@@ -340,3 +340,23 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 - Consider break-out of SPK pins 34–37 to pads as fallback for DAC-firmware modules.
 - 2026-11-26: AVR Dragon on hand — **not usable** as SPI flash programmer (AVR-only protocols, no flashrom support).
   Options: CH341A + 1.8 V adapter kit (preferred), or Raspberry Pi `linux_spidev` + 1.8 V level shifter (e.g. TXS0108E).
+
+---
+
+## Phase 6 — Scope evidence for Ebyte report (module #3)
+
+Setup: bench supply J6 3.8 V, SW1 pressed, phone connected, **1 kHz sine 0 dBFS**, phone volume max. Probe GND = J6 pin 2.
+**Screenshot every capture.**
+
+| # | What | Where | Scope | Proves | Result |
+|---|---|---|---|---|---|
+| 6.1 | Analog SPK outputs | pins 37/36 (L+/L−), 35/34 (R+/R−); math CH1−CH2 | 500 µs/div, 200–500 mV/div, DC | 1 kHz present → (DAC) firmware | |
+| 6.2 | I2S during playback | pads 5 BCK, 4 LRCK, 3 DATA, 6 MCLK | 1 µs & 20 µs/div, 1 V/div, trig 1.6 V normal | flat = no I2S output | |
+| 6.3 | I2S with 100 k pull-up to 3V3 | pads 4, 5 | as 6.2 | pin floating, not driven | |
+| 6.4 | Search for I2S elsewhere | free PIO pads 27, 29, 30, 48–53 | 1 µs/div, 1 V/div | clock found → I2S remapped in firmware | |
+| 6.5 | I2S at power-up | pad 5 / 4 while pressing SW1 | single, 100 ms/div | rules out brief start-then-stop | |
+| 6.6 | Supplies | 1V8 (pad 22), VBAT, 3V3 during playback | 10 ms/div, AC 50 mV/div | clean power | |
+
+Note 6.1: QCC5125 outputs may be Class-D (PWM, hundreds of kHz) → use 20 MHz BW limit / averaging, or RC filter (1 k series, 100 nF to GND).
+
+Also collect: photo of module label, photo of fitted board, phone screenshot (connected, playing, codec from developer options).
