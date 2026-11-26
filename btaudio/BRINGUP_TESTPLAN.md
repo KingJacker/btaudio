@@ -362,4 +362,4 @@ Note 6.1: QCC5125 outputs may be Class-D (PWM, hundreds of kHz) → use 20 MHz B
 Also collect: photo of module label, photo of fitted board, phone screenshot (connected, playing, codec from developer options).
 - 2026-11-26: CSR USB-SPI adapter on hand (has 1V8 + VS voltage-select pins). Speaks CSR BlueCore SPI-debug protocol —
   **not applicable to QCC5125** (QCC51xx uses USB/TRB debug; module has no debug-SPI pins) and not a flashrom programmer,
-  unless hardware is FTDI MPSSE (lsusb 0403:6014/6010/6011) → then usable via `flashrom -p ft2232_spi` at 1.8 V. Pending lsusb check.
+  unless hardware is FTDI MPSSE (lsusb 0403:6014/6010/6011) → then usable via `flashrom -p ft2232_spi` at 1.8 V. lsusb = **0a12:0042 (CSR SPI Converter, CSR protocol) → not usable.** Order CH341A + 1.8 V kit.
