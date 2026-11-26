@@ -28,7 +28,7 @@ The module works normally: it boots, pairs, plays, and the LEDs follow play/paus
 
 ## Key evidence — one capture, same moment
 
-**CH4 (green): analog SPK output, 1 kHz sine. CH1–CH3: I2S pins, flat.**
+**CH4 (green): pin 37 (SPK-LP), 1 kHz sine. CH1: pin 3 (I2S_SDATA), CH2: pin 4 (I2S_LRCK), CH3: pin 5 (I2S_SCK) — all flat.**
 Captured simultaneously during A2DP playback (1 ms/div).
 
 ![SPK output vs I2S pins, simultaneous](../imgs/bringup/scope_simultaneous_spk_vs_i2s.jpg)
