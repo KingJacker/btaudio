@@ -293,7 +293,7 @@ Plan: (1) remove #2, open shield, ID + read flash with voltage-correct programme
 
 ### Status at end of 2026-11-25
 
-- Ebyte insists module is (I2S). Pending decisive test: **AC V on SPK pins 37–36 / 35–34 while playing 1 kHz.**
+- Ebyte insists module is (I2S). (Decisive test since done — see Phase 6.) Previously pending: **AC V on SPK pins 37–36 / 35–34 while playing 1 kHz.**
   - Signal present → wrong (DAC) firmware → send evidence to Ebyte, request replacement or I2S firmware image.
   - No signal → not simply wrong firmware → Pico clock-injection test, flash dump.
 - Before reordering: prefer EWT104-DA10 dev board + (I2S) module from official Ebyte store as known-good reference.
@@ -375,3 +375,10 @@ Also collect: photo of module label, photo of fitted board, phone screenshot (co
 - 6.3: DMM result (pad 4 → 3.0 V with 100 k pull-up) used; no separate scope shot needed.
 - **Report to Ebyte written: btaudio/EBYTE_REPORT.md** (fill in order number + name before sending; attach imgs/bringup photos).
 - Simultaneous capture: CH4 = SPK output 1 kHz sine, CH1–CH3 = I2S pins flat — imgs/bringup/scope_simultaneous_spk_vs_i2s.jpg (added to report as key evidence)
+
+### 2026-11-27 — Report sent
+
+- Report (btaudio/EBYTE_REPORT.md) sent to EBYTE as a reply in the existing email thread, with scope photos attached.
+- Waiting for EBYTE's answer. If none within ~1 week: open a new ticket via the EBYTE website support form, referencing the thread;
+  optionally message the AliExpress seller (order ref. 3072877780089435).
+- Meanwhile: order CH341A + 1.8 V adapter kit; do not connect module #3 to Qualcomm tools before a verified flash backup.
