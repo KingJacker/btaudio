@@ -1,0 +1,37 @@
+Subject: EWM104-BT5125(I2S) "Version: I" outputs analog audio, I2S inactive – wrong firmware? Request for replacement / I2S firmware
+
+Product: EWM104-BT5125(I2S), marking "Version: I", SN S5203841S00017
+Order: AliExpress, CDEBYTE IoT Module Store, ref. 3072877780089435, placed 20 May 2026, 3 pcs
+
+Dear EBYTE support,
+
+I bought three EWM104-BT5125(I2S) modules. The module marked "Version: I" does NOT output audio on the I2S interface. During playback the audio appears on the analog differential outputs (SPK pins 34–37), while the I2S pins stay inactive. That is the behaviour of the (DAC) version. I have already contacted you about this by email; this request contains the oscilloscope measurements.
+
+TEST SETUP
+- Carrier board: EWM104-BT5125 -> I2S -> TI PCM5102A (same DAC as on your EWT104-DA10 board)
+- VBAT = 3.8 V from a lab supply; VDD_PADS1 / VDD_PADS3_7 = 3.3 V
+- Powered on with SYS_CTRL, paired with an Android phone (A2DP), playing a 1 kHz sine at 0 dBFS, phone volume at maximum
+- Oscilloscope: Tektronix TBS1104, probes x10, ground at board GND
+The module otherwise works normally: it boots, pairs, plays, and the LEDs follow play/pause.
+
+RESULTS
+1. One capture, same moment (Figure 1): pin 37 (SPK-LP) shows a clean 1 kHz sine; pins 3 (I2S_SDATA), 4 (I2S_LRCK) and 5 (I2S_SCK) are flat.
+2. Analog outputs pins 37/36 (Figures 2, 3): clean 1.000 kHz sine, about 1.5 Vpp differential, about 0.7 Vpp per pin.
+3. I2S pins 3, 4, 5, 6 during playback (Figure 4): all flat at 100 mV/div – no clocks, no data, no MCLK.
+4. With a 100 kOhm pull-up to 3.3 V, pin 4 (LRCK) rises to 3.0 V: the pin is a high-impedance input, not driven by the module.
+
+CONCLUSION
+Your EWT104-DA10 manual states that the (I2S) version plays out of the box through the PCM5102A at I2S_OUT, which requires the module to be I2S master. My module does not do this. I believe it carries the (DAC) firmware although it is marked "Version: I".
+
+REQUESTS
+1. Please check the firmware of modules from this order (ref. 3072877780089435, SN S5203841S00017).
+2. Please send replacement modules with verified I2S master firmware, or provide the correct (I2S) factory firmware image.
+3. Two further modules from the same order stopped booting after being connected over USB to the Qualcomm configuration tools (1.8 V rail comes up, but no LEDs, no USB enumeration, no Bluetooth). I can program the on-module SPI flash (Macronix MX25U3232F) directly. Can you provide the factory (I2S) flash image so I can restore them?
+4. Please confirm the I2S parameters of the (I2S) firmware: master/slave, sample rate, word length, format (I2S / left-justified), and whether MCLK is output.
+
+Attached: Figure 1 – simultaneous capture SPK vs I2S · Figures 2, 3 – SPK pins 37/36 · Figure 4 – I2S pins 3–6 during playback · Figure 5 – module marking · Figure 6 – carrier board with module
+
+Thank you. I can provide further measurements if needed.
+
+Best regards,
+Dan Heller
